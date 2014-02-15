@@ -17,14 +17,15 @@ Look here for a list of updated Battle Plugins & Hacks: http://webdevelop.comli.
 Notes:
 ------
 This software uses FamFamFam Silk icons licensed under Creative Commons Attribution 2.5 License.
-If you would like to post/add other images or mods for other Battle modification users, please do so using Tiny Upload or the SMF Download site and post the download link in the Battle Plugins & Hacks thread located here: [url=http://webdevelop.comli.com/index.php?board=18.0]Battle Plugins & Hacks[/url]
+If you would like to post/add other images or mods for other Battle modification users, please do so using Tiny Upload or the SMF Download site and post the download link in the Battle Plugins & Hacks thread located here: http://webdevelop.comli.com/index.php?board=18.0]Battle Plugins & Hacks
 
 Enjoy your battles!
 
 Developed by SA | nend | Underdog
 Copyright 2009, 2010, 2011, 2012, 2013, 2014 SA | nend | Underdog
 
-Battle falls under the Creative Commons - Attribution No Derivatives License (by-nd) 3.0 ( http://creativecommons.org/licenses/by-nd/3.0/ )
+Battle falls under the Creative Commons - Attribution No Derivatives License (by-nd) 3.0 
+( http://creativecommons.org/licenses/by-nd/3.0/ )
 
 Disclaimer:
 
