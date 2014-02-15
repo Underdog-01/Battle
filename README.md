@@ -17,7 +17,7 @@ Look here for a list of updated Battle Plugins & Hacks: http://webdevelop.comli.
 Notes:
 ------
 This software uses FamFamFam Silk icons licensed under Creative Commons Attribution 2.5 License.
-If you would like to post/add other images or mods for other Battle modification users, please do so using Tiny Upload or the SMF Download site and post the download link in the Battle Plugins & Hacks thread located here: http://webdevelop.comli.com/index.php?board=18.0]Battle Plugins & Hacks
+If you would like to post/add other images or mods for other Battle modification users, please do so using Tiny Upload or the SMF Download site and post the download link in the Battle Plugins & Hacks thread located here: http://webdevelop.comli.com/index.php?board=18.0
 
 Enjoy your battles!
 
