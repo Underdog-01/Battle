@@ -1,0 +1,151 @@
+-- Changelog for Battle --
+
+-- V 1.15 --
+
+! reorganized/added files due to previous large file sizes causing ftp issues
+! added custom template file for freshlooks theme
+! fixed unset variable in BattleAdminQuests.php
+! fixed adding campaigns issue
+! fixed undefined array where no campaigns exist
+! fixed shoutbox refresh issue (now redirects to current sub action)
+
+-- V 1.14 --
+
++ added reset points to maintenance
++ added another leader board that keeps stats of overall past wins (this leaderboard updated only when points are reset)
++ added auto/manual option to reset game (xx number of hours after game has ended ... 0 to disable)
++ added more increments for adding stat points (50, 100)
++ added option to change the display name of currency being used
++ added points system for explore and battle
++ added option to stop the game when someone reaches a predetermined level
++ added high point scores and current winner + their stats to the overall stats page
++ added option to stop game play per player or a single player when final level is reached
++ added option to auto reset a completed game after preset time period
++ added display of battle mode, target level and time/date of reset (if applicable)
++ added battle game stats link to Navigation
++ added points to Stats display
++ added new icon for points
++ added ability for user to sort members list for battle members
++ clearing users stats now also resets points
++ more bonus points for 1 - monster max hp (random) / 20
++ added option to allow auto leveling up
++ added go button to start campaigns
++ added daily limit for attacking each member and weekly limit for kills
++ subtraction of atk and def added to battle/explore
++ added more ways to gain stat points (during battle/explore)
++ added explanation of newer gameplay to how to play text
++ some data now stored in sessions, cookies and the cache
+! allowed more int allowance with some admin template inputs
+! fixed battle other members fatal_error issue
+! fixed member battle earned stats in history not displaying proper user name
+! fixed display of drop down for campaigns in quest template
+! fixed campaign routine for performing quests
+! fixed installer routine for adjusting tables
+! fixed upgrade source code to not allow cheating via clicking on multiple links
+! fixed explore actions to not allow cheating via clicking on multiple links
+! fixed allowance of negative values for explore rewards/penalties
+! fixed evolution setting in monster edit template/source
+! fixed undefined errors
+! fixed exp/max_exp for editing/updating member stats
+! fixed to not allow decimals when buying from the shop
+! split/added some files due to size mainly for FTP editing purposes
+! added who is in battle icon (sword .. battle.png)
+! added fatal_error for when opponent user info does not exist (battle member)
+! adjusted help text concerning currency
+
+-- V 1.13 --
+
++ added extra commands in Battle Admin -> Members to edit stats for all members if opted
+! added memory limit allocation (ini_set) to installer for large members table manipulation
+! fixed installer for editing members table (only edits members without existing stats)
+
+-- V 1.12 --
+
++ added experience restriction for battling members
++ added level range for battling members
++ added custom sessions to thwart cheating
++ changed history for losing member battle to reflect opponent experience gain
+! fixed display of icons/links in profile, posting and PM
+! adjusted all tables columns settings (mostly due to unsigned=true not being done)
+! members table has default settings for battle columns
+! battle link in nav bar does not show when mod is disabled
+! added fatal_error back button href changes (via js) for battle, explore and quest templates
+! fixed helptxt grammar for campaign permissions
+! fixed installation for when previous version (v1.0-RC7-2) was installed (monsters table needed values added)
+! time inputs for battle campaigns no longer need 0 prefix for 1 - 9 hour (24 hr clock) entry
+! fixed quest source code
+! fixed campaign leaderboard
+! fixed permissions for campaigns to not work with post based groups (one must/should create new membergroup(s) for campaigns)
+! fixed outcome of custom actions (display and database)
+! fixed outcome of battling monsters/enemies deducts energy
+! fixed outcome of battling monsters for stat gains/losses
+! fixed battle members stat gains/losses and their display
+! fixed max experience gains for battle monster or member to database config settings
+! removed javascript disable back button
+! filtered all admin inputs (abs, text, actions, etc.)
+! fixed battle admin member source code to edit graveyard table accordingly
+! fixed add column syntax within installer package
+! fixed update member column in install package
+
+-- v1.11 --
+
+! disabled browser back button in battle template to thwart cheating
+! fixed vertical alignment of Battle News & General Info in admin template
+! fixed SA donation button due to improper HTML
+
+
+-- v1.10 --
+
++ updated to new copyright (Underdog now current supporting developer)
++ emended version designation(s)
++ uses socket connection for Battle News to retrieve data from WebDev
++ updated/emended general info and credits
++ completed *Admin -> Battle* Members routine to accept various input
++ added custom pages routine
++ added empty battle-leader board to maintainence
++ added empty quest stats to maintenance
++ added campaigns which allow quest restriction options (completion and time)
++ added battle-leaderboard sub-routine/template
++ added campaign-leaderboard sub-routine/template
++ added battle_quest_champs table
++ added battle_monsters_fight table
++ added warnings for no hp to fight/battle
++ added warnings for low hp during battle
++ added various methods for query/display of members/warriors
++ added default checkbox/sub-routine for member/warrior entries
++ added default settings option for warrior stats
++ added more images for various functions
++ added admin menu images
++ added campaign images
++ added alternate/more settings for quests
++ added enemy ability to evolve/increase stats (if opted)
++ added admin option for custom enemy designation
++ added admin setting to allow/disallow users to fight enemies out of range
++ added admin settings to enable/disable quests
++ added admin setting to enable/disable member battle
++ current admin menu action now emphasized
++ added drop-down for quest campaigns in quest template
++ all delete type functions in admin now require confirmation
+! changed modification language edits to Battle language files
+! added help text file with language variables
+! separated admin language variables
+! added index.php files to image directories
+! fixed template files
+! fixed source files
+! fixed occurrences of duplicate function names
+! all battle scenarios index to battle screen
+! double links will not show when all in battle die
+! fixed upgrade issue concerning unwarranted negative stat points(penalty still in place for url cheating)
+! language changes and additions (note: translators need to update their files)
+! members slain stat updated for opposing user when battle is lost
+! if both die in same battle history is updated accordingly
+! winning in battle increases experience points
+! changed to custom php pagination routine where applicable (admin and battle)
+! fixed quest mode
+! fixed battle template for disabled shoutbox
+! dropped battle_quest_hist table
+! fixed warriors online current action-image display and added commas to that list
+! fixed css/html in template menus (cells were not lining up and wrong sizing)
+! alternate css for rows in various lists (windowbg/windowbg2)
+! changed fighting enemy hp level only affects current explore battle
+! fixed duplicate action entry for quest
