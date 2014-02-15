@@ -1,7 +1,13 @@
 -- Changelog for Battle --
 
 -- V 1.15 --
-
++ added user settings custom hook for Battle
++ added member context custom hook for Battle
+! changed file edit to $user_info hook for Battle (existing hook)
+! whichever member column is opted will be included in the above changes
+! fixed user avatar in Battle template
+! edited admin display to only include beta testers that contributed since Battle v1.1+ 
+! fixed install.xml file 
 ! reorganized/added files due to previous large file sizes causing ftp issues
 ! added custom template file for freshlooks theme
 ! fixed unset variable in BattleAdminQuests.php
