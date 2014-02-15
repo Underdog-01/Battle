@@ -14,6 +14,7 @@
 ! fixed adding campaigns issue
 ! fixed undefined array where no campaigns exist
 ! fixed shoutbox refresh issue (now redirects to current sub action)
+! fixed sub-action icons and titles for Battle Who's Online
 
 -- V 1.14 --
 
