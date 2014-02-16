@@ -112,11 +112,11 @@ $txt['battle_mod_credits'] = '<span><b>Developers:</b> <a href="https://github.c
 		<a href="http://smf.houseofsmoky.com/index.php?action=profile;u=9" target="_blank">ast3r1x</a> for images<br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=110614" target="_blank">dada83</a> for images<br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=18506" target="_blank">Skhilled</a> for beta testing<br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=360530">Burt</a> for beta testing<br />
+		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=360530" target="_blank">Burt</a> for beta testing<br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=322341" target="_blank">NekoJonez</a> for beta testing <br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=157140" target="_blank">Fog</a> for beta testing <br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=49996" target="_blank"> nend</a> for code contributing<br />
-                <a href="http://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SA™</a> for original development
+                <a href="http://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SAï¿½</a> for original development
             </p>
             <p>
                 <b>Related Links:</b><br />
