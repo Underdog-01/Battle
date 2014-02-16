@@ -40,10 +40,10 @@ $smcFunc['db_insert']('replace', '{db_prefix}settings',
 			),
 	array(
 		array ('battle_version' ,'1.15'),
-                array ('battle_revision' ,'Beta4'),
+                array ('battle_revision' ,'Beta5'),
 		array ('battle_dev' ,0),
 		array ('battle_build' ,'3'),
-		array ('battle_build_date' ,'February 14, 2014'),
+		array ('battle_build_date' ,'February 16, 2014'),
 		),
 		array()
 	);
