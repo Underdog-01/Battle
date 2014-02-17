@@ -116,7 +116,7 @@ $txt['battle_mod_credits'] = '<span><b>Developers:</b> <a href="https://github.c
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=322341" target="_blank">NekoJonez</a> for beta testing <br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=157140" target="_blank">Fog</a> for beta testing <br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=49996" target="_blank"> nend</a> for code contributing<br />
-                <a href="http://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SA�</a> for original development
+                <a href="http://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SA&trade;</a> for original development
             </p>
             <p>
                 <b>Related Links:</b><br />
