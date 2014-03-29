@@ -916,10 +916,10 @@ function template_battle_stats()
 							</a>
 						</td>
 						<td width="20%" align="left" valign="top">
-							', $atk['atk'] > 0 ? '<img src="' . $settings['images_url'] . '/bar_stats.png" width="' . $atk['percent'] . '" height="15" alt="" />' : '&nbsp;', '
+							', $atk['max_atk'] > 0 ? '<img src="' . $settings['images_url'] . '/bar_stats.png" width="' . $atk['percent'] . '" height="15" alt="" />' : '&nbsp;', '
 						</td>
 						<td width="20%" align="right" valign="top">
-							', $atk['atk'], '
+							', $atk['max_atk'], '
 						</td>
 					</tr>';
 	}
@@ -947,10 +947,10 @@ function template_battle_stats()
 							</a>
 						</td>
 						<td width="20%" align="left" valign="top">
-							', $def['def'] > 0 ? '<img src="' . $settings['images_url'] . '/bar_stats.png" width="' . $def['percent'] . '" height="15" alt="" />' : '&nbsp;', '
+							', $def['max_def'] > 0 ? '<img src="' . $settings['images_url'] . '/bar_stats.png" width="' . $def['percent'] . '" height="15" alt="" />' : '&nbsp;', '
 						</td>
 						<td width="20%" align="right" valign="top">
-							', $def['def'], '
+							', $def['max_def'], '
 						</td>
 					</tr>';
 	}
@@ -2296,7 +2296,7 @@ function template_battle_explore()
 				{
 					echo '
 			<td>
-				<img src="', $settings['images_url'], '/battle/', $tile, '" border="0" usemap="#tile" width="50" height="50" alt="" />
+				<img style="display:block;position:relative;" src="', $settings['images_url'], '/battle/', $tile, '" border="0" usemap="#tile" width="50" height="50" alt="" />
 					<map id="', $tile, '" name="tile">
 						<area shape="rect" coords="', $modSettings['battle_map_coords'], '" href="', $scripturl, '?action=battle;sa=search;#battle_main" alt="" />
 					</map>
@@ -2342,16 +2342,16 @@ function template_battle_monsters()
 
 		echo '
 		<tr>
-			<td align="left" class="', $class, '" style="padding-left:2%;line-height:25px;width:30%">
+			<td align="left" class="', $class, '" style="padding-left:2%;line-height:25px;width:30%;display:inline-block;">
 				<img src="', $settings['images_url'], '/battle/monsters/', $row['img'], '" width="35" height="35" alt="" title="', $row['name'], '" />
 				<span style="position:relative;bottom:12px;">
 					', strlen($row['name']) > 25 ? substr($row['name'], 0, 22) . '...' : $row['name'], '
 				</span>
 			</td>
-			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%;">
-				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="vertical-align:middle;" />
+			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%;display:inline-block;">
+				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="display:block;vertical-align:middle;" />
 			</td>
-			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;">
+			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;display:inline-block;">
 				<span style="position:relative;display:table-cell;height:25px">
 					', $txt['battle_monStatsA'], ':&nbsp;&nbsp;
 				</span>
@@ -2359,10 +2359,10 @@ function template_battle_monsters()
 					', $row['atk'], '
 				</span>
 			</td>
-			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%">
-				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="vertical-align:middle;" />
+			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%;display:inline-block;">
+				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="display:block;vertical-align:middle;" />
 			</td>
-			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;">
+			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;display:inline-block;">
 				<span style="position:relative;width:80%;display:table-cell;">
 					', $txt['battle_range'], ':&nbsp;&nbsp;
 				</span>
@@ -2371,9 +2371,9 @@ function template_battle_monsters()
 				</span>
 			</td>
 			<td class="', $class, ' centertext" style="padding-right:2%;line-height:25px;width:5%">
-				<img border="0" src="', $settings['images_url'], '/battle/shield.png" alt="" style="vertical-align:middle;margin-right:-10px" />
+				<img border="0" src="', $settings['images_url'], '/battle/shield.png" alt="" style="display:block;vertical-align:middle;" />
 			</td>
-			<td class="', $class, ' centertext" style="line-height:25px;width:15%;padding-right:2%;vertical-align:middle;text-align:left;">
+			<td class="', $class, ' centertext" style="line-height:25px;width:15%;padding-right:95%;vertical-align:middle;display:inline-block;">
 				<span style="position:relative;display:table-cell;width:80%;">
 					', $txt['battle_monStatsD'], ':&nbsp;&nbsp;
 				</span>

@@ -13,22 +13,22 @@
 	<type>modification</type>
 	<version>1.15</version>
 
-	<!-- Install -->
-	<install for="2.0 - 2.09.99">
+	<!-- Install SMF 2.0.X -->
+	<install for="2.0 - 2.0.9">
 	<readme parsebbc="true">readme.txt</readme>
 	<require-dir name="Sources" destination="$boarddir" />
 	<require-dir name="Themes" destination="$boarddir" />
 	<require-dir name="Themes/default/images/battle" destination="$imagesdir" />
 	<require-dir name="Themes/default/images/admin" destination="$imagesdir" />
 	<require-dir error="skip" name="Themes/freshlooks" destination="$boarddir/Themes" />
-	<modification format="xml" type="file">install.xml</modification>
+	<modification format="xml" type="file">SMF2-0x_install.xml</modification>
 	<code>installScriptX.php</code>
 	<code>installScriptY.php</code>
 	</install>
 
-	<!-- Uninstall -->
-	<uninstall for="2.0 - 2.09.99">
-	<modification type="file" reverse="true">install.xml</modification>
+		<!-- Uninstall 2.0.X -->
+	<uninstall for="2.0 - 2.0.9">
+	<modification type="file" reverse="true">SMF2-0x_install.xml</modification>
 	<code>remove_hooks.php</code>
 	<remove-file name="$themedir/Battle.template.php" />
 	<remove-file name="$themedir/Battle_Admin.template.php" />
@@ -43,9 +43,59 @@
 	<remove-file name="$sourcedir/BattleAdmin.php" />
 	<remove-file name="$sourcedir/Subs-BattleAdmin.php" />
 	<remove-file name="$sourcedir/Subs-Battle.php" />
-	<remove-file name="$sourcedir/Subs-BattleOpps.php" />
 	<remove-file name="$sourcedir/BattleBlocks.php" />
-	<remove-file name="$sourcedir/BattleHooks.php" />
+	<remove-file name="$sourcedir/SMF2-0_BattleHooks.php" />
+	<remove-file name="$sourcedir/SMF2-1_BattleHooks.php" />
+	<remove-file name="$sourcedir/BattleMain.php" />
+	<remove-file name="$sourcedir/BattleShouts.php" />
+	<remove-file name="$sourcedir/BattleOpps.php" />
+	<remove-file name="$sourcedir/BattleQuests.php" />
+	<remove-file name="$sourcedir/BattleAdminQuests.php" />
+	<remove-dir name="$imagesdir/battle" />
+	<remove-file name="$imagesdir/admin/battle_admin.png" />
+	<remove-file name="$imagesdir/admin/battle_campaign.png" />
+	<remove-file name="$imagesdir/admin/battle_config.png" />
+	<remove-file name="$imagesdir/admin/battle_explore.png" />
+	<remove-file name="$imagesdir/admin/battle_maintain.png" />
+	<remove-file name="$imagesdir/admin/battle_members.png" />
+	<remove-file name="$imagesdir/admin/battle_monster.png" />
+	<remove-file name="$imagesdir/admin/battle_quest.png" />
+	<remove-file name="$imagesdir/admin/battle_shop.png" />
+	</uninstall>
+
+	<!-- Install SMF 2.1.X -->
+	<install for="2.1 - 2.1.9">
+	<readme parsebbc="true">readme.txt</readme>
+	<require-dir name="Sources" destination="$boarddir" />
+	<require-dir name="Themes" destination="$boarddir" />
+	<require-dir name="Themes/default/images/battle" destination="$imagesdir" />
+	<require-dir name="Themes/default/images/admin" destination="$imagesdir" />
+	<require-dir error="skip" name="Themes/freshlooks" destination="$boarddir/Themes" />
+	<modification format="xml" type="file">SMF2-1x_install.xml</modification>
+	<code>installScriptX.php</code>
+	<code>installScriptY.php</code>
+	</install>
+
+	<!-- Uninstall 2.1.X -->
+	<uninstall for="2.1 - 2.1.9">
+	<modification type="file" reverse="true">SMF2-1x_install.xml</modification>
+	<code>remove_hooks.php</code>
+	<remove-file name="$themedir/Battle.template.php" />
+	<remove-file name="$themedir/Battle_Admin.template.php" />
+	<remove-file error="skip" name="$boarddir/Themes/freshlooks/Battle.template.php" />
+	<remove-file name="$languagedir/Battle.english.php" />
+	<remove-file name="$languagedir/Battle.english-utf8.php" />
+	<remove-file name="$languagedir/BattleAdmin.english.php" />
+	<remove-file name="$languagedir/BattleAdmin.english-utf8.php" />
+	<remove-file name="$languagedir/BattleHelp.english.php" />
+	<remove-file name="$languagedir/BattleHelp.english-utf8.php" />
+	<remove-file name="$sourcedir/Battle.php" />
+	<remove-file name="$sourcedir/BattleAdmin.php" />
+	<remove-file name="$sourcedir/Subs-BattleAdmin.php" />
+	<remove-file name="$sourcedir/Subs-Battle.php" />
+	<remove-file name="$sourcedir/BattleBlocks.php" />
+	<remove-file name="$sourcedir/SMF2-0_BattleHooks.php" />
+	<remove-file name="$sourcedir/SMF2-1_BattleHooks.php" />
 	<remove-file name="$sourcedir/BattleMain.php" />
 	<remove-file name="$sourcedir/BattleShouts.php" />
 	<remove-file name="$sourcedir/BattleOpps.php" />
@@ -63,4 +113,3 @@
 	<remove-file name="$imagesdir/admin/battle_shop.png" />
 	</uninstall>
 </package-info>
-

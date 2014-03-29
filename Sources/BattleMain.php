@@ -33,7 +33,7 @@ function battle_battle($per_page = 7)
 
 	$request = $smcFunc['db_query']('', '
 		SELECT COUNT(j.id_member) FROM {db_prefix}members AS j
-		WHERE j.id_member <> {int:userid} AND j.hp <> 0 AND j.atk <> 0 AND j.def <> 0' . $queryUser . '
+		WHERE j.id_member <> {int:userid} AND (j.hp > 0 AND j.atk > 0)' . $queryUser . '
 		ORDER BY ' . $context['battle_mem_sort'] . ' ' . $context['battle_mem_order'],
 		array('userid' => $context['user']['id']));
 
@@ -47,7 +47,7 @@ function battle_battle($per_page = 7)
 		FROM {db_prefix}members AS j
 		LEFT JOIN {db_prefix}attachments AS a ON (a.id_member = j.id_member)
 		LEFT JOIN {db_prefix}membergroups AS mg ON (mg.id_group = CASE WHEN j.id_group = {int:reg_mem_group} THEN j.id_post_group ELSE j.id_group END)
-		WHERE j.id_member <> {int:userid} AND j.hp <> {int:hp} AND j.atk <> {int:atk} AND j.def <> {int:def}' . $queryUser . '
+		WHERE j.id_member <> {int:userid} AND (j.hp > {int:hp} AND j.atk > {int:atk})' . $queryUser . '
 		ORDER BY ' . $context['battle_mem_sort'] . ' ' . $context['battle_mem_order'] . '
 		LIMIT {int:page},{int:per}',
 			array(
@@ -321,6 +321,7 @@ function battle_stats()
 	$context['page_title'] = $txt['battle_game_stats'];
 	$context['battle_winner'] = array();
 	$perc = 0;
+	$first = 0;
 	require_once($sourcedir . '/Subs-Members.php');
 
 	//top member slayers
@@ -328,10 +329,10 @@ function battle_stats()
 	foreach ($context['top_ms'] as $i => $file)
 		$context['top_ms'][$i]['percent'] = round(($file['mem_slays'] * 100) / $max_views);
 
-	 // Strongest attackers bt attack
-	battle_get_stats('atk', 'top_atk');
+	 // Strongest attackers by attack
+	battle_get_stats('max_atk', 'top_atk');
 	foreach ($context['top_atk'] as $i => $file)
-		$context['top_atk'][$i]['percent'] = round(($file['atk'] * 100) / $max_views);
+		$context['top_atk'][$i]['percent'] = round(($file['max_atk'] * 100) / $max_views);
 
 	// Richest attackers
 	battle_get_stats($modSettings['bcash'], 'top_gold');
@@ -339,9 +340,9 @@ function battle_stats()
 		$context['top_gold'][$i]['percent'] = round(($file[$modSettings['bcash']] * 100) / $max_views);
 
 	// Strongest attackers by defence
-	battle_get_stats('def', 'top_def');
+	battle_get_stats('max_def', 'top_def');
 	foreach ($context['top_def'] as $i => $file)
-		$context['top_def'][$i]['percent'] = round(($file['def'] * 100) / $max_views);
+		$context['top_def'][$i]['percent'] = round(($file['max_def'] * 100) / $max_views);
 
 	// top level battler
 	battle_get_stats('level', 'top_level');
@@ -364,23 +365,25 @@ function battle_stats()
 
 	foreach ($context['top_points'] as $keyx => $valuex)
 	{
-		$scorex[$keyx] = $valuex['battle_points'];
+		$scorex[$keyx] = $valuex['total'];
 		$namex[$keyx] = $valuex['real_name'];
 	}
 
 	if (!empty($context['top_points']))
 		array_multisort($scorex, SORT_DESC, $namex, SORT_ASC, $context['top_points']);
 
+
 	foreach ($context['top_points'] as $i => $file)
 	{
 		if (empty($first))
 		{
-			$first = $context['top_points'][$i]['battle_points'];
+			$first = (int)$context['top_points'][$i]['total'];
 			$context['top_points'][$i]['percent'] = 100;
 		}
-		elseif ($first != $context['top_points'][$i]['battle_points'])
-			$context['top_points'][$i]['percent'] = round(($context['top_points'][$i]['battle_points'] / $first) * 100) > 1 ? round(($context['top_points'][$i]['battle_points'] / $first) * 100) : 1;
-
+		elseif ($first != (int)$context['top_points'][$i]['total'])
+			$context['top_points'][$i]['percent'] = round(($context['top_points'][$i]['total'] / $first) * 100) > 1 ? round(($context['top_points'][$i]['total'] / $first) * 100) : 1;
+		else
+			$context['top_points'][$i]['percent'] = 100;
 
 	}
 

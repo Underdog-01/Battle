@@ -1,21 +1,31 @@
 -- Changelog for Battle --
 
 -- V 1.15 --
-+ added user settings custom hook for Battle
-+ added member context custom hook for Battle
+
++ added user settings custom hook for Battle (SMF 2.0.X branch)
++ added member context custom hook for Battle (SMF 2.0.X branch)
++ added SMF 2.1.X branch support
++ added admin->big images for SMF 2.1.X branch
 ! changed file edit to $user_info hook for Battle (existing hook)
 ! whichever member column is opted will be included in the above changes
+! changed to max atk and max def for stats chart
 ! fixed user avatar in Battle template
 ! fixed user avatars in battle members template
-! edited admin display to only include beta testers that contributed since Battle v1.1+ 
-! fixed install.xml file 
-! reorganized/added files due to previous large file sizes causing ftp issues
+! edited admin display to only include beta testers that contributed since Battle v1.1+
+! fixed SMF2-1x_install.xml file
+! reorganized/added source files due to previous large file sizes causing ftp issues
 ! added custom template file for freshlooks theme
 ! fixed unset variable in BattleAdminQuests.php
 ! fixed adding campaigns issue
 ! fixed undefined array where no campaigns exist
 ! fixed shoutbox refresh issue (now redirects to current sub action)
 ! fixed sub-action icons and titles for Battle Who's Online
+! fixed alignment of monsters/enemies data in Battle template
+! fixed installation version ranges
+! fixed DESC order of tallied game + bonus points
+! fixed various language discrepencies
+! fixed line endings of all files to ~ Unix /n
+! fixed UTF-8 language files to UTF-8 encoding
 
 -- V 1.14 --
 

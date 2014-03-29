@@ -10,7 +10,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
    <id>wdm2005:battle</id>
    <name>Battle</name>
-   <version>1.15</version>
+   <version>1.14</version>
    <file name="$sourcedir/Profile-View.php">
       <operation>
 	 <search position="before"><![CDATA[function summary($memID)

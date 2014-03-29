@@ -1,7 +1,7 @@
 [hr]
 [center][size=22pt][color=green]Battle[/color][/size][/center]
 [hr]
-[b]Developed for SMF 2.0.X forums.[/b]
+[b]Developed for SMF 2.X.X forums.[/b]
 Battle is a RPG gaming modification that allows you to battle members and monsters.
 Its gameplay has options to quest and explore maps where one can find items to assist players with their journey whilst battling monsters.
 Support topic at Simple Machines.org: [url=http://www.simplemachines.org/community/index.php?topic=323835.0]Click Here[/url].

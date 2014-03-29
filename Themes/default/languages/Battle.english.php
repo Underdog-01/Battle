@@ -6,7 +6,7 @@
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
  * http://creativecommons.org/licenses/by-nd/3.0/
  */
-global  $modSettings, $scripturl;
+global  $modSettings, $scripturl, $user_info;
 
 // Intro
 $txt['battle_intro_text'] = '<strong>Intro</strong><br />Battle is a simple forum based game that lets users fight ' . (!empty($modSettings['battle_enemy_name_plural']) ? $modSettings['battle_enemy_name_plural'] : 'Monsters') . ' or each other in a 1-click battle. Monsters are created by the administrator and battle results are determined by the user\'s skill points pitted against the ' . (!empty($modSettings['battle_enemy_name_plural']) ? $modSettings['battle_enemy_name_plural'] : 'Monster\'s') . ' skill points.';
@@ -41,7 +41,7 @@ $txt['cheater_sa_battle'] = 'Cheating is not allowed.';
 $txt['battle_game_error_rrro'] = 'You do not got enough stanima, energy or health to make this attack';
 $txt['battle_game_error_energy_explore'] = '<div style="border: 2px dashed rgb(204, 51, 68); margin: 2ex; padding: 2ex; color: black; background-color: rgb(255, 228, 233);"><div style="float: left; width: 2ex; font-size: 2em; color: red;">!!</div><b style="text-decoration: underline;">Error</b><br/><div style="padding-left: 6ex;">You need at least 2 energy to explore, please go to the <a href="'.$scripturl.'?action=battle;sa=shop;home">Shop</a>.</div></div>';
 $txt['battle_deadplease'] = '<div style="border: 2px dashed rgb(204, 51, 68); margin: 2ex; padding: 2ex; color: black; background-color: rgb(255, 228, 233);"><div style="float: left; width: 2ex; font-size: 2em; color: red;">!!</div><b style="text-decoration: underline;">Attention</b><br/><div style="padding-left: 6ex;">You are dead and cannot battle, please go to the <a href="'.$scripturl.'?action=battle;sa=shop;home;#battle_main">Shop</a>.</div></div>';
-$txt['battle_cheatrefresh'] = 'No refreshing is allowed '.$user_info['name'].', please go back to <a href="'.$scripturl.'?action=battle;sa=main;home;#battle_main">Battle Main page</a>';
+$txt['battle_cheatrefresh'] = 'No refreshing is allowed ' . $user_info['name'] . ', please go back to <a href="' . $scripturl . '?action=battle;sa=main;home;#battle_main">Battle Main page</a>';
 $txt['battle_upcheat'] = 'No cheating '.$user_info['name'].'';
 $txt['battle_hp_low'] = '<strong>Warning: Your HP is getting low</strong>';
 $txt['battle_mem_error'] = '<div style="border: 2px dashed rgb(204, 51, 68); margin: 2ex; padding: 2ex; color: black; background-color: rgb(255, 228, 233);"><div style="float: left; width: 2ex; font-size: 2em; color: red;">!!</div><b style="text-decoration: underline;">Error</b><br/><div style="padding-left: 6ex;">Unable to find member!</div></div>';

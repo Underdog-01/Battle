@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!--
+ * Battle was developed for SMF forums c/o SA, nend & Underdog
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
+ * Revamped and supported by -Underdog-
+ * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
+ * http://creativecommons.org/licenses/by-nd/3.0/
+-->
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+   <id>wdm2005:battle</id>
+   <name>Battle</name>
+   <version>1.14</version>
+   <file name="$sourcedir/Profile-View.php">
+      <operation>
+	 <search position="before"><![CDATA[function summary($memID)
+{
+	global $context,]]></search>
+			<add><![CDATA[ $settings,]]></add>
+      </operation>
+      <operation>
+	 <search position="before"><![CDATA[	loadCustomFields($memID);]]></search>
+	    <add><![CDATA[
+	if ($modSettings['enable_sts_profile'] && $modSettings['enable_battle'] && allowedTo('view_battle'))
+	{
+		$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+		$context['custom_fields'][] = array(
+			'name' => 'Battle Stats',
+			'placement' => 0,
+			'output_html' => '
+				<p>
+				    <span>
+					<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $context['member']['atk'] .'
+					<br />
+					<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $context['member']['def'] . '
+					<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+						<br />
+						<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
+						<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $context['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
+					</span>
+				    </span>
+				</p>'
+			);
+	}]]></add>
+      </operation>
+   </file>
+   <file name="$themedir/PersonalMessage.template.php">
+	<operation>
+		<search position="before"><![CDATA[function template_folder()
+{
+	global $context,]]></search>
+		<add><![CDATA[ $user_info,]]></add>
+	</operation>
+      <operation>
+	 <search position="before"><![CDATA[if (!isset($context['disabled_fields']['posts']))
+					echo '
+				<li class="postcount">', $txt['member_postcount'], ': ', $message['member']['posts'], '</li>';]]></search>
+	 <add><![CDATA[
+
+				if ($modSettings['enable_sts_pm'])
+				{
+					$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+					echo'
+				<li>
+				    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+					<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
+					<br />
+					<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $message['member']['def'] . '
+					<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+						<br />
+						<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
+						<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
+					</span>
+				    </span>
+				</li>';
+				}]]></add>
+      </operation>
+   </file>
+   <file name="$themedir/Display.template.php">
+	<operation>
+		<search position="before"><![CDATA[function template_main()
+{
+	global $context,]]></search>
+		<add><![CDATA[ $user_info,]]></add>
+	</operation>
+      <operation>
+	 <search position="after"><![CDATA[		// Is karma display enabled?  Total or +/-?]]></search>
+	 <add><![CDATA[			if (!empty($modSettings['enable_sts_post']))
+			{
+				$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+				echo '
+							        <li>
+								    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+									<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
+									<br />
+									<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $message['member']['def'] . '
+									<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+										<br />
+										<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
+										<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
+									</span>
+								    </span>
+								</li>';
+			}
+
+]]></add>
+      </operation>
+   </file>
+   <file name="$sourcedir/Load.php">
+      <operation>
+	 <search position="before"><![CDATA[mem.birthdate, mem.member_ip,]]></search>
+	 <add><![CDATA[ mem.battle_only_buddies_shout, mem.stat_point, mem.is_dead, mem.lastupdate, mem.atk, mem.max_atk, mem.def, mem.max_def, mem.gold, mem.exp, mem.max_exp, mem.stamina, mem.max_stamina, mem.energy, mem.max_energy, mem.hp, mem.max_hp, mem.level, mem.mem_slays, mem.mon_slays, mem.bpm, mem.battle_points,' . ($modSettings['bcash'] !== 'gold' ? ' mem.' . $modSettings['bcash'] . ',' : '') . ']]></add>
+      </operation>
+      <operation>
+	 <search position="before"><![CDATA[mem.signature, mem.personal_text,]]></search>
+	 <add><![CDATA[ mem.battle_only_buddies_shout, mem.stat_point, mem.is_dead, mem.lastupdate, mem.atk, mem.max_atk, mem.def, mem.max_def, mem.gold, mem.exp, mem.max_exp, mem.stamina, mem.max_stamina, mem.energy, mem.max_energy, mem.hp, mem.max_hp, mem.level, mem.mem_slays, mem.mon_slays, mem.bpm, mem.battle_points,' . ($modSettings['bcash'] !== 'gold' ? ' mem.' . $modSettings['bcash'] . ',' : '') . ']]></add>
+      </operation>
+   </file>
+   <file name="$boarddir/Themes/core/Display.template.php" error="skip">
+	<operation>
+		<search position="before"><![CDATA[function template_main()
+{
+	global $context,]]></search>
+		<add><![CDATA[ $user_info,]]></add>
+	</operation>
+      <operation>
+	 <search position="before"><![CDATA[echo '
+						<li>', $txt['member_postcount'], ': ', $message['member']['posts'], '</li>';]]></search>
+	 <add><![CDATA[
+			// Show the Battle stats
+			if ($modSettings['enable_sts_post'])
+			{
+				$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+				echo'
+						<li>
+						    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+							<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
+							<br />
+							<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $message['member']['def'] . '
+							<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+								<br />
+								<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
+								<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
+							</span>
+						    </span>
+						</li>';
+			}]]></add>
+      </operation>
+   </file>
+   <file name="$boarddir/Themes/core/PersonalMessage.template.php" error="skip">
+	<operation>
+		<search position="before"><![CDATA[function template_folder()
+{
+	global $context,]]></search>
+		<add><![CDATA[ $user_info,]]></add>
+	</operation>
+      <operation>
+	 <search position="before"><![CDATA[echo '
+						<li>', $txt['member_postcount'], ': ', $message['member']['posts'], '</li>';]]></search>
+	 <add><![CDATA[
+			// Show the Battle stats
+			if ($modSettings['enable_sts_post'])
+			{
+				$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+				echo'
+						<li>
+						    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+							<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
+							<br />
+							<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $message['member']['def'] . '
+							<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
+								<br />
+								<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
+								<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
+							</span>
+						    </span>
+						</li>';
+			}]]></add>
+      </operation>
+   </file>
+</modification>

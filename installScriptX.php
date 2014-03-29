@@ -16,12 +16,17 @@ global $smcFunc, $scripturl, $modSettings;
 @ini_set('memory_limit', '128M');
 
 $currency = !empty($modSettings['bcash']) ? $modSettings['bcash'] : 'gold';
+$smfVersion = !empty($modSettings['smfVersion']) ? explode('.', $modSettings['smfVersion']) : array(2,0,7);
 
 // First load the SMF 2's Extra DB Functions
 db_extend('packages');
 db_extend('extra');
 
-add_integration_function('integrate_pre_include', '$sourcedir/BattleHooks.php');
+if ((!empty($modSettings['smfVersion'][1])) && intval($smfVersion[1]) == 0)
+    add_integration_function('integrate_pre_include', '$sourcedir/SMF2-0_BattleHooks.php');
+else
+    add_integration_function('integrate_pre_include', '$sourcedir/SMF2-1_BattleHooks.php');
+
 add_integration_function('integrate_actions', 'battle_actions');
 add_integration_function('integrate_load_permissions', 'battle_load_permissions');
 add_integration_function('integrate_menu_buttons', 'battle_menu_buttons');
@@ -40,7 +45,7 @@ $smcFunc['db_insert']('replace', '{db_prefix}settings',
 			),
 	array(
 		array ('battle_version' ,'1.15'),
-                array ('battle_revision' ,'Beta5'),
+                array ('battle_revision' ,'Beta6'),
 		array ('battle_dev' ,0),
 		array ('battle_build' ,'3'),
 		array ('battle_build_date' ,'February 16, 2014'),

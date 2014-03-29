@@ -6,7 +6,7 @@
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
  * http://creativecommons.org/licenses/by-nd/3.0/
  */
-global  $modSettings, $scripturl;
+global  $modSettings, $scripturl, $user_info;
 
 // Intro
 $txt['battle_intro_text'] = '<strong>Intro</strong><br />Battle is a simple forum based game that lets users fight ' . (!empty($modSettings['battle_enemy_name_plural']) ? $modSettings['battle_enemy_name_plural'] : 'Monsters') . ' or each other in a 1-click battle. Monsters are created by the administrator and battle results are determined by the user\'s skill points pitted against the ' . (!empty($modSettings['battle_enemy_name_plural']) ? $modSettings['battle_enemy_name_plural'] : 'Monster\'s') . ' skill points.';

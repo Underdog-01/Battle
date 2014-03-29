@@ -13,7 +13,7 @@ global $scripturl, $modSettings;
 // Tabs
 $txt['battle_tabammain'] = 'Main';
 $txt['battle_tab'] = 'Battle';
-$txt['battle_atab'] = 'Battle Admin';
+$txt['battle_atab'] = 'Battle Home';
 $txt['battle_taba'] = 'Battle';
 $txt['battle_tabac'] = 'Config';
 $txt['battle_tabas'] = 'Shop';
@@ -97,7 +97,7 @@ $txt['battle_donate'] = 'If you like Battle, please donate to the developer!';
 $txt['battle_mod_version'] = 'Version/Credits';
 $txt['battle_mod_cur'] = '<b>Your Battle version</b> ';
 $txt['battle_mod_late'] = '<b>Latest Battle version</b> ';
-$txt['smf_version'] = '<b>SMF Version:</b> ';
+$txt['smf_version'] = '<b>SMF Version</b> ';
 $txt['battle_news_connect'] = 'Unable to connect to Battle news file.';
 $txt['battle_build'] = 'Battle Build';
 $txt['battle_build_date'] = 'Date';
@@ -107,7 +107,7 @@ $txt['battle_revision'] = !empty($modSettings['battle_revision']) ? $modSettings
 $txt['battle_special_thanks'] = 'Special thanks to';
 $txt['battle_mod_credits'] = '<span><b>Developers:</b> <a href="https://github.com/SAMods">SA </a>| <a href="http://dev.siserver.us/">nend</a> | <a href="https://github.com/Underdog-01">Underdog</a></span>
             <p>
-                <b>Special thanks to...</b><br />
+                <b>Special thanks to:</b><br />
 		<a href="http://www.forcefighters.com/public/forum/index.php" target="_blank">Force Fighters</a> for code contributing/images<br />
 		<a href="http://smf.houseofsmoky.com/index.php?action=profile;u=9" target="_blank">ast3r1x</a> for images<br />
 		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=110614" target="_blank">dada83</a> for images<br />
@@ -219,15 +219,15 @@ $txt['battle_cust_edit'] = 'Edit Custom Action';
 $txt['battle_cust_delete'] = 'Delete Custom Action';
 
 // Main config
-$txt['battle_gold_reg'] = (!empty($modSettings['battle_cash']) ? $modSettings['battle_cash'] : 'Gold') . ' to add to a a newly registered user :';
-$txt['battle_stamina_max_reg'] = 'Max stamina to add to newly registered user :';
+$txt['battle_gold_reg'] = (!empty($modSettings['battle_cash']) ? $modSettings['battle_cash'] : 'Gold') . ' to add to a newly registered user :';
+$txt['battle_stamina_max_reg'] = 'Max stamina to add to newly registered users :';
 $txt['battle_stamina_reg'] = 'Stamina to give to newly registered users :';
-$txt['battle_energy_max_reg'] = 'Max energy to give to newly registered user :';
+$txt['battle_energy_max_reg'] = 'Max energy to give to newly registered users :';
 $txt['battle_energy_reg'] = 'Energy to give to give to newly registered users :';
 $txt['battle_def_max_reg'] = 'Max defense to give to newly registered users :';
 $txt['battle_def_reg'] = 'Defense to give to newly registered users :';
 $txt['battle_atk_max_reg'] = 'Max attack to give to newly registered users :';
-$txt['battle_atk_reg'] = 'Max attack to give to newly registered users :';
+$txt['battle_atk_reg'] = 'Attack to give to newly registered users :';
 $txt['battle_hp_reg'] = 'Health to give to newly registered users :';
 $txt['battle_hp_max_reg'] = 'Max health to give to newly registered users :';
 $txt['battle_game_setaadmin'] = 'Enable for users to get a PM when they are attacked :';
@@ -239,18 +239,18 @@ $txt['battle_how_much_hp'] = 'How much health the revived user gets :';
 $txt['exp_stat_level'] = 'Stat points upon level up :';
 $txt['enable_battle_hist'] = 'Enable Battle history :';
 $txt['enable_battle_range'] = 'Fight ' . (!empty($modSettings['battle_enemy_name_plural']) ? $modSettings['battle_enemy_name_plural'] : 'Monsters') . ' out of range :';
-$txt['enable_sts_post'] = 'Show battle stats in posts :';
-$txt['enable_sts_pm'] = 'Show battle stats in PM profile :';
-$txt['enable_sts_profile'] = 'Show battle stats in profile :';
-$txt['battle_map_across'] = 'Map Tiles Width :';
-$txt['battle_map_down'] = 'Map Tiles Height :';
+$txt['enable_sts_post'] = 'Show Battle stats in posts :';
+$txt['enable_sts_pm'] = 'Show Battle stats in PM profile :';
+$txt['enable_sts_profile'] = 'Show Battle stats in profile :';
+$txt['battle_map_across'] = 'Map Tiles width :';
+$txt['battle_map_down'] = 'Map Tiles height :';
 $txt['enable_battle'] = 'Enable Battle Mod :';
 $txt['battle_adminmm'] = 'Battle Admin';
 $txt['battle_adminmmd'] = 'This page allows you to edit settings of Battle';
 $txt['battle_adminmmc'] = 'Main Settings';
 $txt['battle_config'] = 'Config Battle';
 $txt['enable_img_menu'] = 'Enable for Town Map, disable for Navigation :';
-$txt['battle_auto_lvl'] = 'Enable Automatic Level Up';
+$txt['battle_auto_lvl'] = 'Enable automatic leveling up';
 $txt['enable_battle_shoutbox'] = 'Enable Battle Shoutbox :';
 $txt['bcash'] = 'Cash System To Use With Battle :';
 $txt['battle_map_tile1'] = 'Enter The Map Tile1';
@@ -262,19 +262,19 @@ $txt['battle_map_tile6'] = 'Enter The Map Tile6';
 $txt['battle_map_coords'] = 'Enter Coordinates For Your Map
 <div class="smalltext">You only Need To Change This If Your Maps Tiles Are Bigger Or Smaller Than Whats There</div>';
 $txt['battle_time'] = 'Rate of time before cash is updated :';
-$txt['battle_add_amount'] = 'Amount to add every %1$d Seconds :';
+$txt['battle_add_amount'] = 'Amount to add every %1$d seconds :';
 $txt['enable_show_who_battle'] = 'Enable Battle Info Center :';
-$txt['battle_enable_membattle'] = 'Enable Battle Against Members :';
-$txt['battle_exp_restrict_membattle'] = 'Experience Restriction For Battling Members :';
+$txt['battle_enable_membattle'] = 'Enable Battle against members :';
+$txt['battle_exp_restrict_membattle'] = 'Experience restriction for battling members :';
 $txt['battle_enable_quests'] = 'Enable Battle Quests :';
 $txt['battle_level_mem'] = 'Level Range For Battling Members (-1 to disable) :';
 $txt['battle_mem_battle_limit'] = 'Member Battles Allowed Every 24 Hrs (0 = unlimited) :';
 $txt['battle_mem_kill_limit'] = 'Member Kills Allowed Every 7 Days (0 = unlimited) :';
 $txt['battle_cash'] = 'Name For Monetary Units :';
-$txt['battle_points'] = 'Ending Level For Battle Points Game (0 to disable) :';
+$txt['battle_points'] = 'Ending level for Battle Points Game (0 to disable) :';
 $txt['battle_players_lvl'] = 'First player to reach final level ends/wins Battle :';
 $txt['battle_combine_pts'] = 'Combine campaign & battle points :';
-$txt['battle_map_name'] = 'Battle Map Title';
+$txt['battle_map_name'] = 'Battle map title';
 $txt['battle_reset_time'] = 'Number of hours to wait until auto reset (0 to disable) :';
 
 // Campaigns
@@ -298,8 +298,8 @@ $txt['battle_campaign_opt'] = '<strong>Battle Campaign</strong>';
 $txt['battle_campaign_warrior'] = 'Warrior';
 $txt['battle_campaign_membergroups'] = 'Membergroups :';
 $txt['battle_campaign_current_time'] = 'Current Time :';
-$txt['battle_campaign_currentDate'] = 'Date:';
-$txt['battle_campaign_currentTime'] = 'Time:';
+$txt['battle_campaign_currentDate'] = 'Date :';
+$txt['battle_campaign_currentTime'] = 'Time :';
 $txt['battle_campaign_score'] = 'Score';
 $txt['battle_campaign_na'] = 'N/A';
 $txt['battle_campaign_level_completion'] = 'Level Completion Required';
