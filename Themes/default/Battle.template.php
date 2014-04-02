@@ -1934,7 +1934,7 @@ function template_battle_battle()
 		echo '
 		<tr>
 			<td class="centertext ', $class, '" width="25%">
-				', $avatar = $row['avatar'] == '' ? ($row['id_attach'] > 0 ? '<img src="' . (empty($row['attachment_type']) ? $boardurl . '?action=dlattach;attach=' . $row['id_attach'] . ';type=avatar' : $modSettings['custom_avatar_url'] . '/' . $row['filename']) . '" alt="" width="25" height="25" style="border: 1px solid silver"/>' : '') : (stristr($row['avatar'], 'http://') ? '<img src="' . $row['avatar'] . '" alt="" class="avatar" width="25" height="25" style="border: 1px solid silver"/>' : '<img src="avatars/' . htmlspecialchars($row['avatar']) . '" alt="" class="avatar" width="25" height="25" style="border: 1px solid silver"/>');
+				', $avatar = $row['avatar'] == '' ? ($row['id_attach'] > 0 ? '<img src="' . (empty($row['attachment_type']) ? $scripturl . '?action=dlattach;attach=' . $row['id_attach'] . ';type=avatar' : $modSettings['custom_avatar_url'] . '/' . $row['filename']) . '" alt="" width="25" height="25" style="border: 1px solid silver"/>' : '') : (stristr($row['avatar'], 'http://') ? '<img src="' . $row['avatar'] . '" alt="" class="avatar" width="25" height="25" style="border: 1px solid silver"/>' : '<img src="avatars/' . htmlspecialchars($row['avatar']) . '" alt="" class="avatar" width="25" height="25" style="border: 1px solid silver"/>');
 
 		if(empty($avatar))
 			echo '
