@@ -24,7 +24,7 @@ function battle()
     $context['template_layers'][] = 'battlemain';
     @ini_set('memory_limit','64M');
 
-    // load some Stuff
+    // load some data
     battle_init();
     battle_mode();
     battle_get_shouts(5);
