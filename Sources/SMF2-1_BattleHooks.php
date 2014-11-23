@@ -312,9 +312,10 @@ function battle_member_context(&$user, $display_custom_fields)
 {
 	global $modSettings, $memberContext, $user_profile;
 
-	$profile = $user_profile[$user];
+	$id = $user['id'];
+	$profile = $user_profile[$id];
 
-	$memberContext[$user] += array(
+	$memberContext[$id] += array(
 		'battle_only_buddies_shout' => $profile['battle_only_buddies_shout'],
 		'stat_point' => $profile['stat_point'],
 		'gold' => $profile['gold'],
@@ -339,10 +340,10 @@ function battle_member_context(&$user, $display_custom_fields)
 		'battle_points' => $profile['battle_points'],
 	);
 
-	if (!in_array($modSettings['bcash'], $memberContext[$user]))
+	if (!in_array($modSettings['bcash'], $memberContext[$id]))
 	{
 		$profile[$modSettings['bcash']] = !empty($profile[$modSettings['bcash']]) ? $profile[$modSettings['bcash']] : $modSettings['bcash'];
-		$memberContext[$user] += array(
+		$memberContext[$id] += array(
 			$modSettings['bcash'] => $profile[$modSettings['bcash']],
 		);
 	}
@@ -353,27 +354,27 @@ function battle_user_settings()
 	global $modSettings, $user_info, $user_settings;
 
 	$user_info += array(
-                'battle_only_buddies_shout' => isset($user_settings['battle_only_buddies_shout']) ? $user_settings['battle_only_buddies_shout'] : '',
-                'stat_point' => isset($user_settings['stat_point']) ? $user_settings['stat_point'] : '',
-                'gold' => isset($user_settings['gold']) ? $user_settings['gold'] : '',
-                'hp' => isset($user_settings['hp']) ? $user_settings['hp'] : '',
-                'max_hp' => isset($user_settings['max_hp']) ? $user_settings['max_hp'] : '',
-                'energy' => isset($user_settings['energy']) ? $user_settings['energy'] : '',
-                'max_energy' => isset($user_settings['max_energy']) ? $user_settings['max_energy'] : '',
-                'stamina' => isset($user_settings['stamina']) ? $user_settings['stamina'] : '', 'max_stamina' => isset($user_settings['max_stamina']) ? $user_settings['max_stamina'] : '',
-                'atk' => isset($user_settings['atk']) ? $user_settings['atk'] : '',
-                'max_atk' => isset($user_settings['max_atk']) ? $user_settings['max_atk'] : '',
-                'def' => isset($user_settings['def']) ? $user_settings['def'] : '',
-                'max_def' => isset($user_settings['max_def']) ? $user_settings['max_def'] : '',
-                'exp' => isset($user_settings['exp']) ? $user_settings['exp'] : '',
-                'max_exp' => isset($user_settings['max_exp']) ? $user_settings['max_exp'] : '',
-                'level' => isset($user_settings['level']) ? $user_settings['level'] : '',
-                'mem_slays' => isset($user_settings['mem_slays']) ? $user_settings['mem_slays'] : '',
-                'mon_slays' => isset($user_settings['mon_slays']) ? $user_settings['mon_slays'] : '',
-                'lastupdate' => isset($user_settings['lastupdate']) ? $user_settings['lastupdate'] : '',
-                'is_dead' => isset($user_settings['is_dead']) ? $user_settings['is_dead'] : '',
-                'bpm' => isset($user_settings['bpm']) ? $user_settings['bpm'] : '',
-                'battle_points' => isset($user_settings['battle_points']) ? $user_settings['battle_points'] : '',
+		'battle_only_buddies_shout' => isset($user_settings['battle_only_buddies_shout']) ? $user_settings['battle_only_buddies_shout'] : '',
+		'stat_point' => isset($user_settings['stat_point']) ? $user_settings['stat_point'] : '',
+		'gold' => isset($user_settings['gold']) ? $user_settings['gold'] : '',
+		'hp' => isset($user_settings['hp']) ? $user_settings['hp'] : '',
+		'max_hp' => isset($user_settings['max_hp']) ? $user_settings['max_hp'] : '',
+		'energy' => isset($user_settings['energy']) ? $user_settings['energy'] : '',
+		'max_energy' => isset($user_settings['max_energy']) ? $user_settings['max_energy'] : '',
+		'stamina' => isset($user_settings['stamina']) ? $user_settings['stamina'] : '', 'max_stamina' => isset($user_settings['max_stamina']) ? $user_settings['max_stamina'] : '',
+		'atk' => isset($user_settings['atk']) ? $user_settings['atk'] : '',
+		'max_atk' => isset($user_settings['max_atk']) ? $user_settings['max_atk'] : '',
+		'def' => isset($user_settings['def']) ? $user_settings['def'] : '',
+		'max_def' => isset($user_settings['max_def']) ? $user_settings['max_def'] : '',
+		'exp' => isset($user_settings['exp']) ? $user_settings['exp'] : '',
+		'max_exp' => isset($user_settings['max_exp']) ? $user_settings['max_exp'] : '',
+		'level' => isset($user_settings['level']) ? $user_settings['level'] : '',
+		'mem_slays' => isset($user_settings['mem_slays']) ? $user_settings['mem_slays'] : '',
+		'mon_slays' => isset($user_settings['mon_slays']) ? $user_settings['mon_slays'] : '',
+		'lastupdate' => isset($user_settings['lastupdate']) ? $user_settings['lastupdate'] : '',
+		'is_dead' => isset($user_settings['is_dead']) ? $user_settings['is_dead'] : '',
+		'bpm' => isset($user_settings['bpm']) ? $user_settings['bpm'] : '',
+		'battle_points' => isset($user_settings['battle_points']) ? $user_settings['battle_points'] : '',
 	);
 
 	if (!in_array($modSettings['bcash'], $user_info))

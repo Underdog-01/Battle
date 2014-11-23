@@ -280,7 +280,7 @@ function battle_fight()
 			$opponentExp = $context['battle_target']['exp'];
 
 		$gameOppPoints = round((($user_info['atk'] * $user_info['def']) / 100 + abs($oppExpNew)) / 20);
-		$target_slays = !empty($user_profile[$row['id_slain']]['mem_slays']) ?  $user_profile[$row['id_slain']]['mem_slays'] : 0;
+		$target_slays = !empty($user_profile[$context['battle_target']['id_member']]['mem_slays']) ?  $user_profile[$context['battle_target']['id_member']]['mem_slays'] : 0;
 		updateMemberData($context['battle_target']['id_member'], array('mem_slays' => $target_slays+1, 'exp' => $opponentExp,  'stat_point' => $currentStatPoint + $oppStatPoint, 'battle_points' => $context['battle_target']['battle_points'] + $gameOppPoints));
 		$user_info['hp'] = 0;
 		$bhist = $context['battle_target']['real_name'] . ' ' . str_replace('&@!@%', $oppStatPoint, $txt['battle_member_stat_points']);

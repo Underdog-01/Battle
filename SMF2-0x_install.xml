@@ -93,7 +93,7 @@
 			{
 				$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
 				echo '
-							        <li>
+								<li>
 								    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
 									<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
 									<br />
@@ -120,16 +120,16 @@
       <operation>
 	 <search position="after"><![CDATA[	// First do a quick run through to make sure there is something to be shown.]]></search>
 	 <add><![CDATA[        // Battle ~ Load the hook for adding to the member context
-        $battleContext = array();
-        call_integration_hook('integrate_member_context', array(&$battleContext, &$profile));
-        $memberContext[$user] += $battleContext;
+	$battleContext = array();
+	call_integration_hook('integrate_member_context', array(&$battleContext, &$profile));
+	$memberContext[$user] += $battleContext;
 
 ]]></add>
       </operation>
       <operation>
 	 <search position="after"><![CDATA[	// Set up the $user_info array.]]></search>
 	 <add><![CDATA[        // Battle ~ Load the hook for adding to the $user_info array
-        call_integration_hook('integrate_user_info', array(&$user_info, &$user_settings));
+	call_integration_hook('integrate_user_info', array(&$user_info, &$user_settings));
 
 ]]></add>
       </operation>

@@ -45,7 +45,7 @@ $smcFunc['db_insert']('replace', '{db_prefix}settings',
 			),
 	array(
 		array ('battle_version' ,'1.15'),
-                array ('battle_revision' ,'Beta6'),
+		array ('battle_revision' ,'Beta7'),
 		array ('battle_dev' ,0),
 		array ('battle_build' ,'3'),
 		array ('battle_build_date' ,'February 16, 2014'),
@@ -59,39 +59,39 @@ $smcFunc['db_drop_table'] ('{db_prefix}battle_champs');
 $smcFunc['db_create_table']('{db_prefix}battle_champs',
    array(
       array(
-         'name' => 'id_champ',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-         'auto' => false
+	 'name' => 'id_champ',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	 'auto' => false
       ),
       array(
-         'name' => 'id_slain',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'id_slain',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'times_champ',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'times_champ',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'date',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'date',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
    ),
    array(
       array(
-         'type' => 'primary',
-         'columns' => array('id_champ')
+	 'type' => 'primary',
+	 'columns' => array('id_champ')
       ),
    ),
       array(),
@@ -99,47 +99,47 @@ $smcFunc['db_create_table']('{db_prefix}battle_champs',
 
 $smcFunc['db_create_table']('{db_prefix}battle_scores',
    array(
-        array(
-         'name' => 'id_warrior',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-         'auto' => false
-        ),
-        array(
-         'name' => 'battle_title',
-         'type' => 'varchar',
-         'size' => 255,
-         'null' => false,
-         'unsigned' => true,
-        ),
-        array(
-         'name' => 'score',
-         'type' => 'bigint',
-         'size' => 11,
-         'null' => false,
-         'unsigned' => true,
-        ),
-        array(
-         'name' => 'date',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-        ),
-        array(
-         'name' => 'level',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-        ),
+	array(
+	 'name' => 'id_warrior',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	 'auto' => false
+	),
+	array(
+	 'name' => 'battle_title',
+	 'type' => 'varchar',
+	 'size' => 255,
+	 'null' => false,
+	 'unsigned' => true,
+	),
+	array(
+	 'name' => 'score',
+	 'type' => 'bigint',
+	 'size' => 11,
+	 'null' => false,
+	 'unsigned' => true,
+	),
+	array(
+	 'name' => 'date',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	),
+	array(
+	 'name' => 'level',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	),
    ),
    array(
       array(
-         'type' => 'primary',
-         'columns' => array('battle_title', 'id_warrior')
+	 'type' => 'primary',
+	 'columns' => array('battle_title', 'id_warrior')
       ),
    ),
       array(),
@@ -148,53 +148,53 @@ $smcFunc['db_create_table']('{db_prefix}battle_scores',
 $smcFunc['db_create_table']('{db_prefix}battle_members',
    array(
       array(
-         'name' => 'member_id',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-         'auto' => false
+	 'name' => 'member_id',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	 'auto' => false
       ),
       array(
-         'name' => 'opponent_id',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'opponent_id',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'battles',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'battles',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'kills',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'kills',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'battles_date',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'battles_date',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
       array(
-         'name' => 'kills_date',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
+	 'name' => 'kills_date',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
       ),
    ),
    array(
       array(
-         'type' => 'primary',
-         'columns' => array('member_id', 'opponent_id')
+	 'type' => 'primary',
+	 'columns' => array('member_id', 'opponent_id')
       ),
    ),
       array(),
@@ -205,84 +205,84 @@ $smcFunc['db_drop_table'] ('{db_prefix}battle_quest_hist');
 
 $smcFunc['db_create_table']('{db_prefix}battle_quest_champs',
    array(
-        array(
-         'name' => 'id_warrior',
-         'type' => 'int',
-         'size' => 10,
-         'null' => false,
-         'unsigned' => true,
-         'auto' => false
+	array(
+	 'name' => 'id_warrior',
+	 'type' => 'int',
+	 'size' => 10,
+	 'null' => false,
+	 'unsigned' => true,
+	 'auto' => false
       ),
-        array(
-         'name' => 'id_quest',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'id_quest',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
-        array(
-         'name' => 'exp_points',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'exp_points',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
-        array(
-         'name' => 'warrior_gold',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'warrior_gold',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
-        array(
-         'name' => 'fail',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'fail',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
-        array(
-         'name' => 'complete',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'complete',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
-        array(
-         'name' => 'date',
-         'type' => 'int',
-         'size' => 10,
-         'unsigned' => true,
-         'null' => false
+	array(
+	 'name' => 'date',
+	 'type' => 'int',
+	 'size' => 10,
+	 'unsigned' => true,
+	 'null' => false
       ),
    ),
-        array(
-            array(
-                'type' => 'primary',
-                'columns' => array('id_warrior', 'id_quest')
-            ),
-        ),
-        array(),
+	array(
+	    array(
+		'type' => 'primary',
+		'columns' => array('id_warrior', 'id_quest')
+	    ),
+	),
+	array(),
     'ignore'
 );
 
 $smcFunc['db_remove_column'](
-        '{db_prefix}battle_quest_champs',
-        'gold'
+	'{db_prefix}battle_quest_champs',
+	'gold'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest_champs',
 	array(
-            'name' => 'warrior_gold',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false
+	    'name' => 'warrior_gold',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_create_table']('{db_prefix}battle_explore',
@@ -291,53 +291,53 @@ $smcFunc['db_create_table']('{db_prefix}battle_explore',
 			'name' => 'id_explore',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'auto' => true,
 		),
 		array(
 			'name' => 'outcome1',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'outcome2',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'outcome2_action',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'outcome1_action',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'start',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'outcome1_reward',
 			'type' => 'bigint',
 			'size' => 10,
-                        'unsigned' => false,
+			'unsigned' => false,
 		),
 		array(
 			'name' => 'price',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'outcome2_reward',
 			'type' => 'bigint',
 			'size' => 10,
-                        'unsigned' => false,
-                        'null' => false
+			'unsigned' => false,
+			'null' => false
 			),
 	),
 	array(
@@ -356,21 +356,21 @@ $smcFunc['db_create_table']('{db_prefix}battle_history',
 			'name' => 'id_hist',
 			'type' => 'int',
 			'null' => false,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'auto' => true
 		),
 		array(
 			'name' => 'content',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 	),
@@ -390,36 +390,36 @@ $smcFunc['db_create_table']('{db_prefix}battle_graveyard',
 			'name' => 'id_grave',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'auto' => true,
 		),
 		array(
 			'name' => 'id_mem',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false
+			'unsigned' => true,
+			'null' => false
 		),
 		array(
 			'name' => 'id_memdef',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'name',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'date',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 	),
 	array(
@@ -438,51 +438,51 @@ $smcFunc['db_create_table']('{db_prefix}battle_monsters_fight',
 			'name' => 'id_warrior',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 			'auto' => false,
 		),
-                array(
+		array(
 			'name' => 'id_monster',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'monster_hp',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'monster_max_hp',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'monster_def',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'monster_atk',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'time',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 	),
 	array(
@@ -500,128 +500,128 @@ $smcFunc['db_create_table']('{db_prefix}battle_quest',
 			'name' => 'id_quest',
 			'type' => 'int',
 			'null' => false,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'auto' => true
 		),
 		array(
 			'name' => 'name',
 			'type' => 'varchar',
-                        'size' => 255,
-                        'unsigned' => true,
-                        'null' => false
+			'size' => 255,
+			'unsigned' => true,
+			'null' => false
 		),
 		array(
 			'name' => 'gold',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'itext',
 			'type' => 'text',
-                        'null' => false,
+			'null' => false,
 		),
 		array(
 			'name' => 'stext',
-                        'type' => 'text',
-                        'null' => false,
+			'type' => 'text',
+			'null' => false,
 		),
 		array(
 			'name' => 'ftext',
-                        'type' => 'text',
-                        'null' => false,
+			'type' => 'text',
+			'null' => false,
 		),
 		array(
 			'name' => 'exp',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'level',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'success',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'plays',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'hp',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'energy',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'is_final',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'min_gold',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'min_exp',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'max_penalty',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'max_gain',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'limit',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'campaign_id',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
-                        'default' => 0,
+			'size' => 10,
+			'unsigned' => true,
+			'default' => 0,
 			'null' => false
 		),
 	),
@@ -639,73 +639,73 @@ $smcFunc['db_create_table']('{db_prefix}battle_campaign_1',
 		array(
 			'name' => 'id_warrior',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 			'auto' => false
 		),
 		array(
 			'name' => 'id_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'campaign_name',
 			'type' => 'varchar',
-                        'size' => 255,
-                        'unsigned' => true,
+			'size' => 255,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'score',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'start_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'end_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'timed_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'level_completion',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'quest_completions',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'image',
 			'type' => 'varchar',
-                        'default' => 'blank.gif',
-                        'unsigned' => true,
-                        'size' => 255,
+			'default' => 'blank.gif',
+			'unsigned' => true,
+			'size' => 255,
 			'null' => false
 		),
 	),
@@ -723,73 +723,73 @@ $smcFunc['db_create_table']('{db_prefix}battle_campaign_2',
 		array(
 			'name' => 'id_warrior',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 			'auto' => false
 		),
 		array(
 			'name' => 'id_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'campaign_name',
 			'type' => 'varchar',
-                        'size' => 255,
-                        'unsigned' => true,
+			'size' => 255,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'score',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'start_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'end_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'timed_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'level_completion',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'quest_completions',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'image',
 			'type' => 'varchar',
-                        'default' => 'blank.gif',
-                        'size' => 255,
-                        'unsigned' => true,
+			'default' => 'blank.gif',
+			'size' => 255,
+			'unsigned' => true,
 			'null' => false
 		),
 	),
@@ -807,72 +807,72 @@ $smcFunc['db_create_table']('{db_prefix}battle_campaign_3',
 		array(
 			'name' => 'id_warrior',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 			'auto' => false
 		),
 		array(
 			'name' => 'id_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'campaign_name',
 			'type' => 'varchar',
-                        'size' => 255,
+			'size' => 255,
 			'null' => false
 		),
 		array(
 			'name' => 'score',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'start_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'end_time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'timed_campaign',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'level_completion',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'quest_completions',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
-                array(
+		array(
 			'name' => 'image',
 			'type' => 'varchar',
-                        'default' => 'blank.gif',
-                        'size' => 255,
-                        'unsigned' => true,
+			'default' => 'blank.gif',
+			'size' => 255,
+			'unsigned' => true,
 			'null' => false
 		),
 	),
@@ -900,31 +900,31 @@ $smcFunc['db_free_result']($result);
 if ((empty($check_alpha['id_campaign'])) || !$check_alpha['id_campaign'] !== 1)
 {
     $smcFunc['db_insert']('replace',
-        '{db_prefix}battle_campaign_1',
+	'{db_prefix}battle_campaign_1',
 	array(
-            'id_warrior' => 'int',
-            'id_campaign' => 'int',
-            'campaign_name' => 'string',
-            'score' => 'int',
-            'start_time' => 'int',
-            'end_time' => 'int',
-            'timed_campaign' => 'int',
-            'level_completion' => 'int',
-            'quest_completions' => 'int',
-            'image' => 'string'
+	    'id_warrior' => 'int',
+	    'id_campaign' => 'int',
+	    'campaign_name' => 'string',
+	    'score' => 'int',
+	    'start_time' => 'int',
+	    'end_time' => 'int',
+	    'timed_campaign' => 'int',
+	    'level_completion' => 'int',
+	    'quest_completions' => 'int',
+	    'image' => 'string'
 	),
-        array(
-            'id_warrior' => 0,
-            'id_campaign' => 1,
-            'campaign_name' => 'Alpha',
-            'score' => 0,
-            'start_time' => 0,
-            'end_time' => 0,
-            'timed_campaign' => 0,
-            'level_completion' => 0,
-            'quest_completions' => 0,
-            'image' => 'Alpha.gif'
-        ),
+	array(
+	    'id_warrior' => 0,
+	    'id_campaign' => 1,
+	    'campaign_name' => 'Alpha',
+	    'score' => 0,
+	    'start_time' => 0,
+	    'end_time' => 0,
+	    'timed_campaign' => 0,
+	    'level_completion' => 0,
+	    'quest_completions' => 0,
+	    'image' => 'Alpha.gif'
+	),
 	array('id_warrior')
     );
 }
@@ -944,31 +944,31 @@ $smcFunc['db_free_result']($result);
 if ((empty($check_beta['id_campaign'])) || !$check_beta['id_campaign'] !== 2)
 {
     $smcFunc['db_insert']('replace',
-        '{db_prefix}battle_campaign_2',
+	'{db_prefix}battle_campaign_2',
 	array(
-            'id_warrior' => 'int',
-            'id_campaign' => 'int',
-            'campaign_name' => 'string',
-            'score' => 'int',
-            'start_time' => 'int',
-            'end_time' => 'int',
-            'timed_campaign' => 'int',
-            'level_completion' => 'int',
-            'quest_completions' => 'int',
-            'image' => 'string'
+	    'id_warrior' => 'int',
+	    'id_campaign' => 'int',
+	    'campaign_name' => 'string',
+	    'score' => 'int',
+	    'start_time' => 'int',
+	    'end_time' => 'int',
+	    'timed_campaign' => 'int',
+	    'level_completion' => 'int',
+	    'quest_completions' => 'int',
+	    'image' => 'string'
 	),
-        array(
-            'id_warrior' => 0,
-            'id_campaign' => 2,
-            'campaign_name' => 'Beta',
-            'score' => 0,
-            'start_time' => 0,
-            'end_time' => 0,
-            'timed_campaign' => 0,
-            'level_completion' => 0,
-            'quest_completions' => 0,
-            'image' => 'Beta.gif'
-        ),
+	array(
+	    'id_warrior' => 0,
+	    'id_campaign' => 2,
+	    'campaign_name' => 'Beta',
+	    'score' => 0,
+	    'start_time' => 0,
+	    'end_time' => 0,
+	    'timed_campaign' => 0,
+	    'level_completion' => 0,
+	    'quest_completions' => 0,
+	    'image' => 'Beta.gif'
+	),
 	array('id_warrior')
     );
 }
@@ -988,31 +988,31 @@ $smcFunc['db_free_result']($result);
 if ((empty($check_gamma['id_campaign'])) || !$check_gamma['id_campaign'] !== 3)
 {
     $smcFunc['db_insert']('replace',
-        '{db_prefix}battle_campaign_3',
+	'{db_prefix}battle_campaign_3',
 	array(
-            'id_warrior' => 'int',
-            'id_campaign' => 'int',
-            'campaign_name' => 'string',
-            'score' => 'int',
-            'start_time' => 'int',
-            'end_time' => 'int',
-            'timed_campaign' => 'int',
-            'level_completion' => 'int',
-            'quest_completions' => 'int',
-            'image' => 'string'
+	    'id_warrior' => 'int',
+	    'id_campaign' => 'int',
+	    'campaign_name' => 'string',
+	    'score' => 'int',
+	    'start_time' => 'int',
+	    'end_time' => 'int',
+	    'timed_campaign' => 'int',
+	    'level_completion' => 'int',
+	    'quest_completions' => 'int',
+	    'image' => 'string'
 	),
-        array(
-            'id_warrior' => 0,
-            'id_campaign' => 3,
-            'campaign_name' => 'Gamma',
-            'score' => 0,
-            'start_time' => 0,
-            'end_time' => 0,
-            'timed_campaign' => 0,
-            'level_completion' => 0,
-            'quest_completions' => 0,
-            'image' => 'Gamma.gif'
-        ),
+	array(
+	    'id_warrior' => 0,
+	    'id_campaign' => 3,
+	    'campaign_name' => 'Gamma',
+	    'score' => 0,
+	    'start_time' => 0,
+	    'end_time' => 0,
+	    'timed_campaign' => 0,
+	    'level_completion' => 0,
+	    'quest_completions' => 0,
+	    'image' => 'Gamma.gif'
+	),
 	array('id_warrior')
     );
 }
@@ -1030,7 +1030,7 @@ $smcFunc['db_free_result']($result);
 if (empty($has_quest))
 {
 	 $smcFunc['db_insert']('ignore',
-            '{db_prefix}battle_quest',
+	    '{db_prefix}battle_quest',
 
 	// Fields
 	array(
@@ -1045,12 +1045,12 @@ if (empty($has_quest))
 		'energy' => 'int',
 		'hp' => 'int',
 		'is_final' => 'int',
-                'min_gold' => 'int',
-                'min_exp' => 'int',
-                'max_penalty' => 'int',
-                'max_gain' => 'int',
-                'limit' => 'int',
-                'campaign_id' => 'int'
+		'min_gold' => 'int',
+		'min_exp' => 'int',
+		'max_penalty' => 'int',
+		'max_gain' => 'int',
+		'limit' => 'int',
+		'campaign_id' => 'int'
 		),
 
 	// Values
@@ -1067,12 +1067,12 @@ if (empty($has_quest))
 			'energy' => 6,
 			'hp' => 3,
 			'is_final' => 1,
-                        'min_gold' => 5,
-                        'min_exp' => 1,
-                        'max_penalty' => 5,
-                        'max_gain' => 5,
-                        'limit' => 3,
-                        'campaign_id' => 0
+			'min_gold' => 5,
+			'min_exp' => 1,
+			'max_penalty' => 5,
+			'max_gain' => 5,
+			'limit' => 3,
+			'campaign_id' => 0
 			),
 
 		array(
@@ -1087,12 +1087,12 @@ if (empty($has_quest))
 			'energy' => 7,
 			'hp' => 4,
 			'is_final' => 1,
-                        'min_gold' => 10,
-                        'min_exp' => 2,
-                        'max_penalty' => 10,
-                        'max_gain' => 10,
-                        'limit' => 3,
-                        'campaign_id' => 0
+			'min_gold' => 10,
+			'min_exp' => 2,
+			'max_penalty' => 10,
+			'max_gain' => 10,
+			'limit' => 3,
+			'campaign_id' => 0
 			),
 		),
 	array());
@@ -1111,7 +1111,7 @@ $smcFunc['db_free_result']($result);
 if (empty($has_explore))
 {
 	 $smcFunc['db_insert']('ignore',
-            '{db_prefix}battle_explore',
+	    '{db_prefix}battle_explore',
 
 	// Fields
 	array(
@@ -1135,7 +1135,7 @@ if (empty($has_explore))
 		'outcome1_action' => 'gold',
 		'outcome2_action' => 'gold',
 		'start' => 'A man comes up to you and whispers, I have magical boxes, I\'ll let you open one for 100 Gold. Deal or no deal?',
-                'price' => 100,
+		'price' => 100,
 			),
 
 		array(
@@ -1158,21 +1158,21 @@ $smcFunc['db_create_table']('{db_prefix}battle_monsters',
 			'name' => 'id_monster',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'auto' => true,
 		),
 		array(
 			'name' => 'atk',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
-                        'null' => false,
+			'unsigned' => true,
+			'null' => false,
 		),
 		array(
 			'name' => 'def',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false,
 		),
 		array(
@@ -1184,7 +1184,7 @@ $smcFunc['db_create_table']('{db_prefix}battle_monsters',
 			'name' => 'max_hp',
 			'type' => 'int',
 			'size' => 10,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false,
 		),
 		array(
@@ -1201,34 +1201,34 @@ $smcFunc['db_create_table']('{db_prefix}battle_monsters',
 			'unsigned' => true,
 			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'mon_range',
 			'type' => 'int',
 			'size' => 10,
 			'unsigned' => true,
 			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'mon_max_range',
 			'type' => 'int',
 			'size' => 10,
 			'unsigned' => true,
 			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'evolve',
 			'type' => 'int',
 			'size' => 10,
 			'unsigned' => true,
 			'null' => false,
 		),
-                array(
+		array(
 			'name' => 'counter',
 			'type' => 'int',
 			'size' => 10,
 			'unsigned' => true,
 			'null' => false,
-                        'default' => 0
+			'default' => 0
 		)
 	),
 	array(
@@ -1245,143 +1245,143 @@ $smcFunc['db_create_table']('{db_prefix}battle_monsters',
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_monsters',
 	array(
-            'name' => 'mon_max_range',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'mon_max_range',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_monsters',
 	array(
-            'name' => 'mon_range',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'mon_range',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_monsters',
 	array(
-            'name' => 'evolve',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'evolve',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_monsters',
 	array(
-            'name' => 'counter',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
-            'default' => 0
+	    'name' => 'counter',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
+	    'default' => 0
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'min_gold',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'min_gold',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'min_exp',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'min_exp',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'max_penalty',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'max_penalty',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'max_gain',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'max_gain',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'limit',
-            'type' => 'int',
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'limit',
+	    'type' => 'int',
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 $smcFunc['db_add_column'](
 	'{db_prefix}battle_quest',
 	array(
-            'name' => 'campaign_id',
-            'type' => 'int',
-            'default' => 0,
-            'size' => 10,
-            'unsigned' => true,
-            'null' => false,
+	    'name' => 'campaign_id',
+	    'type' => 'int',
+	    'default' => 0,
+	    'size' => 10,
+	    'unsigned' => true,
+	    'null' => false,
 	),
-        array(),
-        'ignore',
-        'fatal'
+	array(),
+	'ignore',
+	'fatal'
 );
 
 // Add the default enemies/monsters
@@ -1399,11 +1399,11 @@ $smcFunc['db_free_result']($result);
 if (empty($has_mon))
 {
 	 $smcFunc['db_insert']('ignore',
-            '{db_prefix}battle_monsters',
+	    '{db_prefix}battle_monsters',
 
 	// Fields
 	array(
-                'atk' => 'string',
+		'atk' => 'string',
 		'def' => 'string',
 		'hp' => 'string',
 		'max_hp' => 'string',
@@ -1411,38 +1411,38 @@ if (empty($has_mon))
 		'name' => 'string',
 		'mon_range' => 'int',
 		'mon_max_range' => 'int',
-                'evolve' => 'int',
-                'counter' => 'int'
+		'evolve' => 'int',
+		'counter' => 'int'
 		),
 
 	// Values
 	array(
-            array(
-                'atk' => '34',
-                'def' => '56',
-                'hp' => '100',
-                'max_hp' => '100',
-                'img' => '5.png',
-                'name' => 'Snowqueen',
-                'mon_range' => 1,
-                'mon_max_range' => 2,
-                'evolve' => 0,
-                'counter' => 0
-            ),
+	    array(
+		'atk' => '34',
+		'def' => '56',
+		'hp' => '100',
+		'max_hp' => '100',
+		'img' => '5.png',
+		'name' => 'Snowqueen',
+		'mon_range' => 1,
+		'mon_max_range' => 2,
+		'evolve' => 0,
+		'counter' => 0
+	    ),
 
-            array(
-                'atk' => '46',
-                'def' => '50',
-                'hp' => '100',
-                'max_hp' => '100',
-                'img' => '8.png',
-                'name' => 'wdm2005',
-                'mon_range' => 1,
-                'mon_max_range' => 2,
-                'evolve' => 0,
-                'counter' => 0
-            ),
-            array(
+	    array(
+		'atk' => '46',
+		'def' => '50',
+		'hp' => '100',
+		'max_hp' => '100',
+		'img' => '8.png',
+		'name' => 'wdm2005',
+		'mon_range' => 1,
+		'mon_max_range' => 2,
+		'evolve' => 0,
+		'counter' => 0
+	    ),
+	    array(
 		'atk' => '67',
 		'def' => '55',
 		'hp' => '100',
@@ -1451,11 +1451,11 @@ if (empty($has_mon))
 		'name' => 'simply sibyl',
 		'mon_range' => 1,
 		'mon_max_range' => 2,
-                'evolve' => 1,
-                'counter' => 0
-            ),
-            array(
-                'atk' => '12',
+		'evolve' => 1,
+		'counter' => 0
+	    ),
+	    array(
+		'atk' => '12',
 		'def' => '51',
 		'hp' => '545',
 		'max_hp' => '512',
@@ -1464,9 +1464,9 @@ if (empty($has_mon))
 		'mon_range' => 1,
 		'mon_max_range' => 2,
 		'evolve' => 2,
-                'counter' => 0
+		'counter' => 0
 		),
-            array(
+	    array(
 		'atk' => '70',
 		'def' => '300',
 		'hp' => '640',
@@ -1476,9 +1476,9 @@ if (empty($has_mon))
 		'mon_range' => 3,
 		'mon_max_range' => 10,
 		'evolve' => 3,
-                'counter' => 0
+		'counter' => 0
 		),
-            ),
+	    ),
 	array());
 	}
 
@@ -1491,19 +1491,19 @@ $check = array();
 while ($row = $smcFunc['db_fetch_assoc']($result))
 {
     $check[] = array(
-                'id_monster' => $row['id_monster'],
-                'name' => $row['name'],
-                'atk' => $row['atk'],
-                'def' => $row['def'],
-                'hp' => $row['hp'],
-                'img' => $row['img'],
-                'max_hp' => $row['max_hp'],
-                'mon_range' => !empty($row['mon_range']) ? (int)$row['mon_range'] : 0,
-                'mon_max_range' => !empty($row['mon_max_range']) ? (int)$row['mon_max_range'] : 1000,
-                'evolve' => !empty($row['evolve']) ? $row['evolve'] : 0,
-                'counter' => !empty($row['counter']) ? (int)$row['counter'] : 0,
-                'proper' => trim(str_replace('.png', '', $row['img']))
-                );
+		'id_monster' => $row['id_monster'],
+		'name' => $row['name'],
+		'atk' => $row['atk'],
+		'def' => $row['def'],
+		'hp' => $row['hp'],
+		'img' => $row['img'],
+		'max_hp' => $row['max_hp'],
+		'mon_range' => !empty($row['mon_range']) ? (int)$row['mon_range'] : 0,
+		'mon_max_range' => !empty($row['mon_max_range']) ? (int)$row['mon_max_range'] : 1000,
+		'evolve' => !empty($row['evolve']) ? $row['evolve'] : 0,
+		'counter' => !empty($row['counter']) ? (int)$row['counter'] : 0,
+		'proper' => trim(str_replace('.png', '', $row['img']))
+		);
 }
 
 $smcFunc['db_free_result']($result);
@@ -1512,7 +1512,7 @@ foreach ($check as $query)
 {
     if ($query['img'] !== $query['proper'] . '.png' && strpos($query['img'], '.png') !== false)
     {
-        $smcFunc['db_insert']('replace', '{db_prefix}battle_monsters',
+	$smcFunc['db_insert']('replace', '{db_prefix}battle_monsters',
 			array(
 				'id_monster' => 'int',
 				'name' => 'string',
@@ -1523,8 +1523,8 @@ foreach ($check as $query)
 				'max_hp' => 'int',
 				'mon_range' => 'int',
 				'mon_max_range' => 'int',
-                                'evolve' => 'int',
-                                'counter' => 'int'
+				'evolve' => 'int',
+				'counter' => 'int'
 			),
 			array(
 				$query['id_monster'],
@@ -1536,15 +1536,15 @@ foreach ($check as $query)
 				$query['max_hp'],
 				$query['mon_range'],
 				$query['mon_max_range'],
-                                $query['evolve'],
-                                $query['counter']
+				$query['evolve'],
+				$query['counter']
 			),
 			'id_monster'
 		);
     }
     else
     {
-        $smcFunc['db_insert']('replace', '{db_prefix}battle_monsters',
+	$smcFunc['db_insert']('replace', '{db_prefix}battle_monsters',
 			array(
 				'id_monster' => 'int',
 				'name' => 'string',
@@ -1555,8 +1555,8 @@ foreach ($check as $query)
 				'max_hp' => 'int',
 				'mon_range' => 'int',
 				'mon_max_range' => 'int',
-                                'evolve' => 'int',
-                                'counter' => 'int'
+				'evolve' => 'int',
+				'counter' => 'int'
 			),
 			array(
 				$query['id_monster'],
@@ -1568,8 +1568,8 @@ foreach ($check as $query)
 				$query['max_hp'],
 				$query['mon_range'],
 				$query['mon_max_range'],
-                                $query['evolve'],
-                                $query['counter']
+				$query['evolve'],
+				$query['counter']
 			),
 			'id_monster'
 		);
@@ -1588,29 +1588,29 @@ $smcFunc['db_insert']('ignore', '{db_prefix}settings',
 		array ('enable_battle_shoutbox' ,'1'),
 		array ('enable_show_who_battle' ,'1'),
 		array ('enable_battle_hist' ,'1'),
-                array('battle_enable_membattle', '1'),
-                array('battle_exp_restrict_membattle', '1'),
+		array('battle_enable_membattle', '1'),
+		array('battle_exp_restrict_membattle', '1'),
 		array('battle_enable_quests', '1'),
 		array ('enable_sts_post' ,'1'),
 		array ('enable_sts_pm' ,'1'),
 		array ('enable_sts_profile' ,'1'),
-                array ('enable_battle_range' ,'1'),
+		array ('enable_battle_range' ,'1'),
 		array ('bcash', 'gold'),
-                array('battle_cash', 'gold'),
-                array('battle_points', '1000'),
-                array('battle_map_name', 'Battle of Kyofu'),
+		array('battle_cash', 'gold'),
+		array('battle_points', '1000'),
+		array('battle_map_name', 'Battle of Kyofu'),
 		array ('battle_map_tile1' ,'plains'),
 		array ('battle_map_tile2' ,'hills'),
 		array ('battle_map_tile3' ,'forest'),
 		array ('battle_map_tile4' ,'swamp'),
 		array ('battle_map_tile5' ,'mountains'),
 		array ('battle_map_tile6' ,'water'),
-                array ('battle_map_coords' ,'1,3,246,248'),
+		array ('battle_map_coords' ,'1,3,246,248'),
 		array ('battle_map_across' ,'10'),
 		array ('battle_map_down' ,'10'),
 		array ('exp_bef_level' ,'25'),
 		array ('exp_stat_level' ,'1'),
-                array ('battle_level_mem' ,'-1'),
+		array ('battle_level_mem' ,'-1'),
 		array ('exp_def_mem' ,'5'),
 		array ('exp_def_mon' ,'5'),
 		array ('battle_time' ,'3600'),
@@ -1628,13 +1628,13 @@ $smcFunc['db_insert']('ignore', '{db_prefix}settings',
 		array ('battle_stamina_max_reg' ,'100'),
 		array ('battle_energy_reg' ,'100'),
 		array ('battle_energy_max_reg' ,'100'),
-                array ('battle_enemy_designation' ,'Monster'),
+		array ('battle_enemy_designation' ,'Monster'),
 		array ('battle_enemy_name_plural' ,'Monsters'),
-                array('battle_mem_battle_limit', 0),
-                array('battle_mem_kill_limit', 0),
-                array('battle_auto_lvl', 0),
-                array('battle_players_lvl', 0),
-                array('battle_combine_pts', 1)
+		array('battle_mem_battle_limit', 0),
+		array('battle_mem_kill_limit', 0),
+		array('battle_auto_lvl', 0),
+		array('battle_players_lvl', 0),
+		array('battle_combine_pts', 1)
 		),
 		array()
 	);
@@ -1645,8 +1645,8 @@ array(
 	'name' => 'bpm',
 	'type' => 'int',
 	'default' => '0',
-        'unsigned' => true,
-        'null' => false,
+	'unsigned' => true,
+	'null' => false,
 	),
 array(),
 false
@@ -1656,8 +1656,8 @@ array(
 	'name' => 'energy',
 	'type' => 'int',
 	'default' => '0',
-        'unsigned' => true,
-        'null' => false,
+	'unsigned' => true,
+	'null' => false,
 	),
 array(),
 false
@@ -1665,13 +1665,13 @@ false
 
 $smcFunc['db_add_column']('{db_prefix}battle_quest',
 array(
-        'name' => 'is_final',
-        'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
-        'default' => '1',
-        ),
+	'name' => 'is_final',
+	'type' => 'int',
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
+	'default' => '1',
+	),
 array(),
 false
 );
@@ -1680,9 +1680,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => $currency,
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '1100',
 	),
 array(),
@@ -1693,9 +1693,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'is_dead',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1706,9 +1706,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'battle_last',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1719,9 +1719,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'stat_point',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1732,9 +1732,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'lastupdate',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1745,9 +1745,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'atk',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1758,9 +1758,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_atk',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1771,9 +1771,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'def',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1784,9 +1784,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_def',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1797,9 +1797,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'energy',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1810,9 +1810,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_energy',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1823,9 +1823,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'stamina',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1836,9 +1836,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_stamina',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1849,9 +1849,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'hp',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1862,9 +1862,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_hp',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '100',
 	),
 array(),
@@ -1875,9 +1875,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'exp',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1888,9 +1888,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'max_exp',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1901,9 +1901,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'level',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1914,9 +1914,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'mem_slays',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1927,9 +1927,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'battle_only_buddies_shout',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1940,9 +1940,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'mon_slays',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1953,9 +1953,9 @@ $smcFunc['db_add_column']('{db_prefix}members',
 array(
 	'name' => 'battle_points',
 	'type' => 'bigint',
-        'size' => 11,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 11,
+	'unsigned' => true,
+	'null' => false,
 	'default' => '0',
 	),
 array(),
@@ -1966,9 +1966,9 @@ $smcFunc['db_add_column']('{db_prefix}battle_scores',
 array(
 	'name' => 'level',
 	'type' => 'int',
-        'size' => 10,
-        'unsigned' => true,
-        'null' => false,
+	'size' => 10,
+	'unsigned' => true,
+	'null' => false,
 	),
 array(),
 false
@@ -1979,30 +1979,30 @@ $smcFunc['db_create_table']('{db_prefix}battle_shouts',
 		array(
 			'name' => 'id_shout',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 			'auto' => true
 		),
 		array(
 			'name' => 'id_member',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 		),
 		array(
 			'name' => 'content',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'time',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false
 		),
 	),
@@ -2020,51 +2020,51 @@ $smcFunc['db_create_table']('{db_prefix}battle_shouts',
 		array(
 			'name' => 'id_item',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 			'auto' => true
 		),
 		array(
 			'name' => 'price',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 		),
 		array(
 			'name' => 'amount',
 			'type' => 'int',
-                        'size' => 10,
-                        'unsigned' => true,
+			'size' => 10,
+			'unsigned' => true,
 			'null' => false,
 		),
 		array(
 			'name' => 'action',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'description',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'img',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 		array(
 			'name' => 'name',
 			'type' => 'varchar',
 			'size' => 255,
-                        'unsigned' => true,
+			'unsigned' => true,
 			'null' => false
 		),
 	),
@@ -2090,7 +2090,7 @@ $smcFunc['db_free_result']($result);
 if (empty($has_item))
 {
 	 $smcFunc['db_insert']('ignore',
-            '{db_prefix}battle_shop',
+	    '{db_prefix}battle_shop',
 
 	// Fields
 	array(
@@ -2108,7 +2108,7 @@ if (empty($has_item))
 	// Values
 	array(
        array(
-	   	 'price' => '100',
+		 'price' => '100',
 		'amount' => '100',
 		'action' => 'atk',
 		'description' => 'Gives You 100 Attack',
@@ -2116,7 +2116,7 @@ if (empty($has_item))
 		'name' => 'Attack Boost',
 			),
 			 array(
-	   	 'price' => '55',
+		 'price' => '55',
 		'amount' => '55',
 		'action' => 'hp',
 		'description' => 'Gives You 55 Health',
@@ -2124,7 +2124,7 @@ if (empty($has_item))
 		'name' => 'Health Boost',
 			),
 			 array(
-	   	 'price' => '55',
+		 'price' => '55',
 		'amount' => '50',
 		'action' => 'def',
 		'description' => 'Gives You 50 defense',
@@ -2132,7 +2132,7 @@ if (empty($has_item))
 		'name' => 'Defense Star',
 			),
 			 array(
-	   	 'price' => '1000',
+		 'price' => '1000',
 		'amount' => '100',
 		'action' => 'energy',
 		'description' => 'Gives You 100 Energy',
@@ -2140,7 +2140,7 @@ if (empty($has_item))
 		'name' => 'Tomato',
 			),
 						 array(
-	   	 'price' => '50',
+		 'price' => '50',
 		'amount' => '50',
 		'action' => 'stamina',
 		'description' => 'Gives You 50 Stamina',

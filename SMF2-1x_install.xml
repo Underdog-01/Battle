@@ -84,24 +84,27 @@
 		<add><![CDATA[ $user_info,]]></add>
 	</operation>
       <operation>
-	 <search position="after"><![CDATA[		// Is karma display enabled?  Total or +/-?]]></search>
-	 <add><![CDATA[			if (!empty($modSettings['enable_sts_post']))
-			{
-				$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+	 <search position="after"><![CDATA[		// Any custom fields to show as icons?]]></search>
+	 <add><![CDATA[		// Battle message icons
+	 if (!empty($modSettings['enable_sts_post']) && allowedTo('view_battle') && $modSettings['enable_battle'] == 1)
+		{
+			$message['battle_fields']['icons'] = array();
+			$check = 9 * ((!empty($user_info['hp']) ? $user_info['hp'] : 9) + (!empty($user_info['energy']) ? $user_info['energy'] : 9) + (!empty($user_info['stamina']) ? $user_info['stamina'] : 9) + (!empty($user_info['exp']) ? $user_info['exp'] : 9));
+			$message['battle_fields']['icons'][] = array('col_name' => 'profile_icons', 'value' => '<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" title="'. $txt['battle_statsA'] . ': ' . $message['member']['atk'] . '" />');
+			$message['battle_fields']['icons'][] = array('col_name' => 'profile_icons', 'value' => '<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" title="'. $txt['battle_statsD'] . ': ' . $message['member']['def'] . '" />');
+			$message['battle_fields']['icons'][] = array('col_name' => 'profile_icons', 'value' => '<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main"><img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" title="' . $txt['battle_statsATK'] . '" /></a>');
+			echo '
+								<li class="im_icons">
+									<ol>';
+
+			foreach ($message['battle_fields']['icons'] as $custom)
 				echo '
-							        <li>
-								    <span style="' . (allowedTo('view_battle') && $modSettings['enable_battle'] == 1 ? 'display:inline;' : 'display:none;') . '">
-									<img border="0" src="' . $settings['images_url'] . '/battle/bomb.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsA'] . ': ' . $message['member']['atk'] .'
-									<br />
-									<img border="0" src="' . $settings['images_url'] . '/battle/shield.png" alt="" style="vertical-align:top;" /> ' . $txt['battle_statsD'] . ': ' . $message['member']['def'] . '
-									<span style="' . ($modSettings['battle_enable_membattle'] == 1 ? 'display:inline;' : 'display:none;') . '">
-										<br />
-										<img border="0" src="' . $settings['images_url'] . '/battle/battle_sword.gif" alt="" style="vertical-align:top;" />
-										<a href="' . $scripturl . '?action=battle;sa=fight;attack=' . $message['member']['id'] . ';session=' . $context['session_id'] . $check . ';#battle_main">' . $txt['battle_statsATK'] . '</a>
-									</span>
-								    </span>
+										<li class="', $custom['col_name'] ,'">', $custom['value'], '</li>';
+
+			echo '
+									</ol>
 								</li>';
-			}
+		}
 
 ]]></add>
       </operation>

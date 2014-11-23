@@ -14,7 +14,7 @@
 	<version>1.15</version>
 
 	<!-- Install SMF 2.0.X -->
-	<install for="2.0 - 2.0.9">
+	<install for="2.0 - 2.0.98">
 	<readme parsebbc="true">readme.txt</readme>
 	<require-dir name="Sources" destination="$boarddir" />
 	<require-dir name="Themes" destination="$boarddir" />
@@ -27,7 +27,7 @@
 	</install>
 
 		<!-- Uninstall 2.0.X -->
-	<uninstall for="2.0 - 2.0.9">
+	<uninstall for="2.0 - 2.0.98">
 	<modification type="file" reverse="true">SMF2-0x_install.xml</modification>
 	<code>remove_hooks.php</code>
 	<remove-file name="$themedir/Battle.template.php" />
@@ -64,7 +64,7 @@
 	</uninstall>
 
 	<!-- Install SMF 2.1.X -->
-	<install for="2.1 - 2.1.9">
+	<install for="2.0.99 - 2.1.9">
 	<readme parsebbc="true">readme.txt</readme>
 	<require-dir name="Sources" destination="$boarddir" />
 	<require-dir name="Themes" destination="$boarddir" />
@@ -77,7 +77,7 @@
 	</install>
 
 	<!-- Uninstall 2.1.X -->
-	<uninstall for="2.1 - 2.1.9">
+	<uninstall for="2.0.99 - 2.1.9">
 	<modification type="file" reverse="true">SMF2-1x_install.xml</modification>
 	<code>remove_hooks.php</code>
 	<remove-file name="$themedir/Battle.template.php" />
