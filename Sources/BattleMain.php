@@ -275,7 +275,8 @@ function battle_graveyard($per_page = 8)
 
 	$row = $smcFunc['db_fetch_assoc']($request);
 	$smcFunc['db_free_result']($request);
-	$nRows = array_shift(array_values($row));
+	$tempArray = array_values($row);
+	$nRows = array_shift($tempArray);
 
 	$request = $smcFunc['db_query']('', '
 		SELECT g.id_grave, g.id_mem, g.name, g.id_memdef, m.real_name, m.buddy_list, m.level, g.date, mg.online_color
