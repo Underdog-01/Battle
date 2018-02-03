@@ -39,7 +39,8 @@ function battle_battle($per_page = 7)
 
 	$row = $smcFunc['db_fetch_assoc']($request);
 	$smcFunc['db_free_result']($request);
-	$nRows = array_shift(array_values($row));
+	$tempArray = array_values($row);
+	$nRows = array_shift($tempArray);
 
 	$battleQ = $smcFunc['db_query']('', '
 		SELECT j.id_member, j.real_name, j.hp, j.atk, j.def, j.member_name,

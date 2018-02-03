@@ -35,7 +35,8 @@ function battleShout($per_page = 10)
 
 		$row = $smcFunc['db_fetch_assoc']($request);
 		$smcFunc['db_free_result']($request);
-		$nRows = array_shift(array_values($row));
+		$tempArray = array_values($row);
+		$nRows = array_shift($tempArray);
 		$page = $context['current_page'] * $per_page;
 
 		// Now create the page index.

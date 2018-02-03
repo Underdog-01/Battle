@@ -349,7 +349,8 @@ function battle_shops($per_page = 10)
 
 	$row = $smcFunc['db_fetch_assoc']($request);
 	$smcFunc['db_free_result']($request);
-	$nRows = array_shift(array_values($row));
+	$tempArray = array_values($row);
+	$nRows = array_shift($tempArray);
 
 	$battleQ = $smcFunc['db_query']('', '
 			SELECT id_item, name, price, action, img, description, amount
@@ -879,7 +880,8 @@ function battle_members($per_page = 20)
 
 		$row = $smcFunc['db_fetch_assoc']($request);
 		$smcFunc['db_free_result']($request);
-		$nRows = array_shift(array_values($row));
+		$tempArray = array_values($row);
+		$nRows = array_shift($tempArray);
 		$page = $context['current_page'] * $per_page;
 
 		$context['battle_members'] = ssi_queryMembers($query_where = 'id_member > 0 AND id_group IN ('.$groups.')', $query_where_params = array(), $query_limit = $page . ',' . $per_page, $query_order = $sort . ' ' . $order, $output_method = '');

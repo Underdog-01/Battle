@@ -52,7 +52,8 @@ function battle_quest($per_page = 5)
 
 	$row = $smcFunc['db_fetch_assoc']($request);
 	$smcFunc['db_free_result']($request);
-	$nRows = array_shift(array_values($row));
+	$tempArray = array_values($row);
+	$nRows = array_shift($tempArray);
 
 	$request = $smcFunc['db_query']('', "
 		SELECT b.id_quest, b.gold, b.itext, b.stext, b.ftext, b.stext, b.exp, b.is_final, b.min_gold, b.max_penalty, b.campaign_id,
