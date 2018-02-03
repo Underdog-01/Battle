@@ -26,7 +26,8 @@ Developed by SA | nend | Underdog
 Copyright 2009, 2010, 2011, 2012, 2013, 2014 SA | nend | Underdog
 
 Battle falls under the Creative Commons - Attribution No Derivatives License (by-nd) 3.0
-( https://creativecommons.org/licenses/by-nd/3.0/ )
+
+https://creativecommons.org/licenses/by-nd/3.0/
 
 Disclaimer:
 
