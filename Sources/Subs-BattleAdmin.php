@@ -127,6 +127,19 @@ function battle_reset_leaderboard($truncate = true, $allowed = 50)
 	redirectexit('action=admin;area=battle;sa=maintain;dlead=done');
 }
 
+function battle_reset_game()
+{
+	global $context, $txt;
+
+	if (!AllowedTo('admin_battle'))
+		fatal_error($txt['battle_admin_error1'], false);
+
+	$context['battle_reset_points'] = true;
+	battle_reset_points(true);
+	battle_reset(true);
+	redirectexit('action=admin;area=battle;sa=maintain;resetgame=done');
+}
+
 function battle_reset($auto = false)
 {
 	global $modSettings, $txt, $sourcedir, $smcFunc;

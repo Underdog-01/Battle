@@ -59,19 +59,20 @@ function battleAdmin()
 		'savemonster' => 'battle_monster',
 		'del' => 'battle_monster_delete',
 		'quest_edit' => 'battle_quest_add_edit',
-	        'quest_save' => 'battle_quest_add_edit',
-	        'quest_add' => 'battle_quest_add_edit',
+		'quest_save' => 'battle_quest_add_edit',
+		'quest_add' => 'battle_quest_add_edit',
 		'quest' => 'battle_quests',
 		'quest_del' => 'battle_quest_delete',
-	        'custom' => 'battle_custom',
-	        'custom_del' => 'battle_cust_delete',
-	        'custom_edit' => 'battle_cust_add_edit',
-	        'custom_save' => 'battle_cust_add_edit',
-	        'custom_add' => 'battle_cust_add_edit',
-	        'maintain' => 'battle_maintain',
-	        'reset' => 'battle_reset',
-	        'dshout' => 'battle_reset_shouts',
-	        'dhist' => 'battle_reset_hist',
+		'custom' => 'battle_custom',
+		'custom_del' => 'battle_cust_delete',
+		'custom_edit' => 'battle_cust_add_edit',
+		'custom_save' => 'battle_cust_add_edit',
+		'custom_add' => 'battle_cust_add_edit',
+		'maintain' => 'battle_maintain',
+		'reset' => 'battle_reset',
+		'resetgame' => 'battle_reset_game',
+		'dshout' => 'battle_reset_shouts',
+		'dhist' => 'battle_reset_hist',
 		'dlead' => 'battle_reset_leaderboard',
 		'dquest' => 'battle_reset_quest',
 		'dpoints' => 'battle_reset_points',
@@ -122,7 +123,7 @@ function battle_maintain()
 	if (!AllowedTo('admin_battle'))
 		fatal_error($txt['battle_admin_error1'], false);
 
-	$context['battle_mcommands'] = array('reset' => 'breset', 'dquest' => 'breset', 'dpoints' => 'breset', 'dshout' => 'empty', 'dhist' => 'empty', 'dlead' => 'empty');
+	$context['battle_mcommands'] = array('resetgame' => 'breset', 'reset' => 'breset', 'dquest' => 'breset', 'dpoints' => 'breset', 'dshout' => 'empty', 'dhist' => 'empty', 'dlead' => 'empty');
 
 	foreach ($context['battle_mcommands'] as $key => $command)
 		$context['battle_maintain_' . $key] = !empty($_REQUEST[$key]) ? $_REQUEST[$key] : false;

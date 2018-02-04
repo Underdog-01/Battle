@@ -190,6 +190,7 @@ $txt['battle_shop_edit'] = 'Edit Item';
 
 // Maintenance
 $txt['battle_tabaman'] = 'Maintenance';
+$txt['battle_maintain_resetgame'] = 'Reset Current Game/Update Overall Leaderboard';
 $txt['battle_maintain_reset'] = 'Reset Battle Stats';
 $txt['battle_maintain_dshout'] = 'Empty The Shoutbox';
 $txt['battle_maintain_breset'] = 'Reset Now!';

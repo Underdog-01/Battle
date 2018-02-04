@@ -483,12 +483,12 @@ function battle_game_over()
 		    );
 		    $check = $smcFunc['db_fetch_assoc']($request);
 		    $smcFunc['db_free_result']($request);
-
-		    setcookie("battle_start_time", date('Y-m-d h:ia', ($check['battle_last'] + round(abs($reset_time * 3600)))), '/');
+			$value = date('Y-m-d h:ia', ($check['battle_last'] + round(abs($reset_time * 3600))));
+		    setcookie("battle_start_time", $value, 0, '/');
 		    if ($check['battle_last'] > 0 && (time() - $check['battle_last']) / 3600 >= round(abs($reset_time)))
 		    {
 			$context['battle_reset_points'] = true;
-			require_once($sourcedir . '/BattleAdmin.php');
+			require_once($sourcedir . '/Subs-BattleAdmin.php');
 			battle_reset_points(true);
 			battle_reset(true);
 
