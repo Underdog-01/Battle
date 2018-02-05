@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0
  */
 
 if (!defined('SMF'))
@@ -13,8 +14,8 @@ if (!defined('SMF'))
 function battle_pagination($content, $count = 20)
 {
 	/* PHP pagination - max 7 visible integers and 6 periods (all links) - current page encircled with square brackets
-	 * This php pagination code was developed by Underdog copyright 2013
-	 * http://webdevelop.comli.com
+	 * This php pagination code was developed by Chen Zhen copyright 2013
+	 * https://web-develop.ca
 	 * Licensed under the GNU Public License: http://www.gnu.org/licenses/gpl.html
 	*/
 
@@ -61,8 +62,8 @@ function battle_pagination($content, $count = 20)
 function battle_pages($lang, $anchor, $link, $pages, $sort=false, $order=false)
 {
 	/* PHP pagination - max 7 visible integers and 6 periods (all links) - current page encircled with square brackets
-	 * This php pagination code was developed by Underdog copyright 2013
-	 * http://webdevelop.comli.com
+	 * This php pagination code was developed by Chen Zhen copyright 2013
+	 * http://web-develop.ca
 	 * Licensed under the GNU Public License: http://www.gnu.org/licenses/gpl.html
 	*/
 	global $context, $txt, $scripturl;
@@ -253,16 +254,16 @@ function explore_monster_init($where = false, $check = false)
 		$where = ' AND m.mon_range <= ' . $level . ' AND m.mon_max_range >= ' . $level;
 
 		$request = $smcFunc['db_query']('', "
-		SELECT m.id_monster, m.name, m.atk, m.def, m.hp,m.img, e.id_explore,
-		e.start, m.mon_range, m.mon_max_range, evolve, f.monster_hp
-		FROM {db_prefix}battle_monsters AS m
-		INNER JOIN {db_prefix}battle_explore AS e
-		LEFT JOIN {db_prefix}battle_monsters_fight AS f ON (f.id_monster = m.id_monster AND f.id_warrior = {int:user_id})
-		WHERE hp <> 0 {$where}
-		ORDER BY RAND()
-		LIMIT 1",
-		array('user_id' => $user_info['id'])
-	);
+			SELECT m.id_monster, m.name, m.atk, m.def, m.hp,m.img, e.id_explore,
+			e.start, m.mon_range, m.mon_max_range, evolve, f.monster_hp
+			FROM {db_prefix}battle_monsters AS m
+			INNER JOIN {db_prefix}battle_explore AS e
+			LEFT JOIN {db_prefix}battle_monsters_fight AS f ON (f.id_monster = m.id_monster AND f.id_warrior = {int:user_id})
+			WHERE hp <> 0 {$where}
+			ORDER BY RAND()
+			LIMIT 1",
+			array('user_id' => $user_info['id'])
+		);
 
 	// Loop through all results
 	while ($row = $smcFunc['db_fetch_assoc']($request))
@@ -637,16 +638,16 @@ function getmonsterslEntry($reset = false)
         return false;
 
     $output = array(
-	'id_monster' => $row['id_monster'],
-	'name' => $row['name'],
-	'atk' => $row['atk'],
-	'def' => $row['def'],
-	'hp' => $row['hp'],
-	'img' => $row['img'],
-	'max_hp' => $row['max_hp'],
-	'mon_range' => !empty($row['mon_range']) ? (int)$row['mon_range'] : 1,
-	'mon_max_range' => !empty($row['mon_max_range']) ? $row['mon_max_range'] : ((!empty($row['mon_range']) ? (int)$row['mon_range'] : 1) + 1),
-	'counter' => !empty($row['counter']) ? (int)$row['counter'] : 0
+		'id_monster' => $row['id_monster'],
+		'name' => $row['name'],
+		'atk' => $row['atk'],
+		'def' => $row['def'],
+		'hp' => $row['hp'],
+		'img' => $row['img'],
+		'max_hp' => $row['max_hp'],
+		'mon_range' => !empty($row['mon_range']) ? (int)$row['mon_range'] : 1,
+		'mon_max_range' => !empty($row['mon_max_range']) ? $row['mon_max_range'] : ((!empty($row['mon_range']) ? (int)$row['mon_range'] : 1) + 1),
+		'counter' => !empty($row['counter']) ? (int)$row['counter'] : 0
 	);
 
     return $output;

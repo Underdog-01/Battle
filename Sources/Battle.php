@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0 
  */
 
 if (!defined('SMF'))
@@ -34,27 +35,27 @@ function battle()
 
     // Here's our little sub-action array.
     $subActions = array(
-	'main' => 'battle_prime',
-	'search' => 'battle_search',
-	'shop' => 'battle_shop',
-	'fm' => 'battle_fight_monster',
-	'battle' => 'battle_battle',
-	'quest' => 'battle_quest',
-	'explore' => 'battle_explore',
-	'shout' => 'battleShout',
-	'hosp' => 'battle_hosp',
-	'fight' => 'battle_fight',
-	'levelup' => 'battle_level',
-	'gy' => 'battle_graveyard',
-	'upgrade' => 'battle_stat_upgrade',
-	'bhist' => 'battle_histlist',
-	'stats' => 'battle_stats',
-	'settings' => 'battle_memset',
-	'monsters' => 'battle_monsters',
-	'howto' => 'battle_howto',
-	'leaders' => 'battle_leaders',
-	'cleaders' => 'battle_campaign_leaders',
-	'leaderboard' => 'battle_leaderboard'
+		'main' => 'battle_prime',
+		'search' => 'battle_search',
+		'shop' => 'battle_shop',
+		'fm' => 'battle_fight_monster',
+		'battle' => 'battle_battle',
+		'quest' => 'battle_quest',
+		'explore' => 'battle_explore',
+		'shout' => 'battleShout',
+		'hosp' => 'battle_hosp',
+		'fight' => 'battle_fight',
+		'levelup' => 'battle_level',
+		'gy' => 'battle_graveyard',
+		'upgrade' => 'battle_stat_upgrade',
+		'bhist' => 'battle_histlist',
+		'stats' => 'battle_stats',
+		'settings' => 'battle_memset',
+		'monsters' => 'battle_monsters',
+		'howto' => 'battle_howto',
+		'leaders' => 'battle_leaders',
+		'cleaders' => 'battle_campaign_leaders',
+		'leaderboard' => 'battle_leaderboard'
 	);
 
     // Default the sub-action to 'battle;sa=main'.
@@ -75,25 +76,25 @@ function battle()
     $context['battle_ErrorBack']['change'] = false;
     foreach (array('explore', 'battle', 'quest') as $errorBack)
 	$context['battle_ErrorBack'][$errorBack] = '
-<script type="text/javascript"><!-- // --><![CDATA[
-    var hyperlinks = document.getElementsByTagName("a");
-    for(var i=0;i<hyperlinks.length; i++)
-    {
-	if(hyperlinks[i].href == "javascript:history.go(-1)")
-	{
-	    hyperlinks[i].href = "' . $scripturl . '?action=battle;sa=' . $errorBack . $campaign_id . ';home;#battle_main";
-	    break;
-	}
-    }
-// ]]></script>';
+	<script type="text/javascript"><!-- // --><![CDATA[
+		var hyperlinks = document.getElementsByTagName("a");
+		for(var i=0;i<hyperlinks.length; i++)
+		{
+			if(hyperlinks[i].href == "javascript:history.go(-1)")
+			{
+				hyperlinks[i].href = "' . $scripturl . '?action=battle;sa=' . $errorBack . $campaign_id . ';home;#battle_main";
+				break;
+			}
+		}
+	// ]]></script>';
 
     // auto level up if it is enabled
     if (!empty($modSettings['battle_auto_lvl']))
-	battle_level('action=battle;sa=' . $_REQUEST['sa'] . ';#battle_main');
+		battle_level('action=battle;sa=' . $_REQUEST['sa'] . ';#battle_main');
 
     // Check to see if the game has been flagged as ended
     if (in_array($_REQUEST['sa'], array('fm', 'battle', 'explore', 'fight')))
-	battle_game_over();
+		battle_game_over();
     else
     	setcookie("battle_start_time", false, time()+3600, '/');
 
@@ -115,11 +116,11 @@ function battle_mode()
     $mode = !empty($modSettings['battle_players_lvl']) ? true : false;
 
     if (!$points)
-	$context['battle_mode'] = $txt['battle_infinity'];
+		$context['battle_mode'] = $txt['battle_infinity'];
     elseif ($mode)
-	$context['battle_mode'] = $txt['battle_victory'];
+		$context['battle_mode'] = $txt['battle_victory'];
     else
-	$context['battle_mode'] = $txt['battle_rivalry'];
+		$context['battle_mode'] = $txt['battle_rivalry'];
 }
 
 function battle_leaders($allowed = 10)
@@ -130,13 +131,13 @@ function battle_leaders($allowed = 10)
     $context['battle_champs'] = array();
 
     $request = $smcFunc['db_query']('', "
-			SELECT c.id_champ, c.id_slain, c.times_champ, c.date, m.real_name, m.mem_slays, m.mon_slays
-			FROM {db_prefix}battle_champs AS c
-			LEFT JOIN {db_prefix}members AS m  ON (c.id_champ = m.id_member)
-		        ORDER BY m.mem_slays DESC
-			LIMIT {int:allowed}",
-			array('allowed' => $allowed)
-                        );
+		SELECT c.id_champ, c.id_slain, c.times_champ, c.date, m.real_name, m.mem_slays, m.mon_slays
+		FROM {db_prefix}battle_champs AS c
+		LEFT JOIN {db_prefix}members AS m  ON (c.id_champ = m.id_member)
+			ORDER BY m.mem_slays DESC
+		LIMIT {int:allowed}",
+		array('allowed' => $allowed)
+	);
 
     // Loop through all results
     while ($row = $smcFunc['db_fetch_assoc']($request))
@@ -145,14 +146,14 @@ function battle_leaders($allowed = 10)
         $slain_name = strlen($user_profile[$row['id_slain']]['real_name']) > 28 ? substr($user_profile[$row['id_slain']]['real_name'], 0, 25) . '...' : $user_profile[$row['id_slain']]['real_name'];
         $name = strlen($row['real_name']) > 28 ? substr($row['real_name'], 0, 25) . '...' : $row['real_name'];
 
-	$context['battle_champs'][] = array(
-		'real_name' => $name,
-		'date' => $row['date'],
-		'id_member' => $row['id_champ'],
-		'times_champ' => !empty($row['times_champ']) ? (int)$row['times_champ'] : 0,
-                'mem_slays' => !empty($row['mem_slays']) ? (int)$row['mem_slays'] : 0,
-                'mon_slays' => !empty($row['mon_slays']) ? (int)$row['mon_slays'] : 0,
-                'who_slain' => '<span style="font-style:oblique;"><a href="' . $scripturl . '?action=profile;u=' . $row['id_slain'] . '">' . $slain_name . '</a></span>'
+		$context['battle_champs'][] = array(
+			'real_name' => $name,
+			'date' => $row['date'],
+			'id_member' => $row['id_champ'],
+			'times_champ' => !empty($row['times_champ']) ? (int)$row['times_champ'] : 0,
+			'mem_slays' => !empty($row['mem_slays']) ? (int)$row['mem_slays'] : 0,
+			'mon_slays' => !empty($row['mon_slays']) ? (int)$row['mon_slays'] : 0,
+			'who_slain' => '<span style="font-style:oblique;"><a href="' . $scripturl . '?action=profile;u=' . $row['id_slain'] . '">' . $slain_name . '</a></span>'
 		);
     }
     $smcFunc['db_free_result']($request);
@@ -177,15 +178,15 @@ function battle_campaign_leaders($per_page = 10)
 	    fatal_error($txt['battle_campaign_exist_error'], false);
 
 	$request = $smcFunc['db_query']('', "
-			SELECT c.id_warrior, c.id_campaign, c.campaign_name, c.score, c.start_time, c.end_time, c.image,
-			qc.id_quest, qc.complete, q.campaign_id
-			FROM {db_prefix}{$table} AS c
-			LEFT JOIN {db_prefix}battle_quest AS q ON (q.campaign_id = c.id_campaign)
-			LEFT JOIN {db_prefix}battle_quest_champs AS qc ON (qc.id_quest = q.id_quest AND qc.id_warrior = c.id_warrior)
-			WHERE c.id_campaign = {int:campaign} AND c.id_warrior >= {int:warrior} AND qc.complete > {int:complete}
-			ORDER BY c.score DESC, qc.complete DESC",
-			array('campaign' => $context['campaign_id'], 'warrior' => 1, 'complete' => 0)
-		    );
+		SELECT c.id_warrior, c.id_campaign, c.campaign_name, c.score, c.start_time, c.end_time, c.image,
+		qc.id_quest, qc.complete, q.campaign_id
+		FROM {db_prefix}{$table} AS c
+		LEFT JOIN {db_prefix}battle_quest AS q ON (q.campaign_id = c.id_campaign)
+		LEFT JOIN {db_prefix}battle_quest_champs AS qc ON (qc.id_quest = q.id_quest AND qc.id_warrior = c.id_warrior)
+		WHERE c.id_campaign = {int:campaign} AND c.id_warrior >= {int:warrior} AND qc.complete > {int:complete}
+		ORDER BY c.score DESC, qc.complete DESC",
+		array('campaign' => $context['campaign_id'], 'warrior' => 1, 'complete' => 0)
+	);
 
 	while ($row = $smcFunc['db_fetch_assoc']($request))
 	{
@@ -196,13 +197,13 @@ function battle_campaign_leaders($per_page = 10)
 	    $totalQuests[$row['id_warrior']] = (!empty($row['complete']) ? (int)$row['complete'] : 0) + (!empty($totalQuests[$row['id_warrior']]) ? $totalQuests[$row['id_warrior']] : 0);
 
 	    $context['battle_campaign_champions'][$row['id_warrior']] = array(
-		'real_name' => !empty($warriorName) ? $warriorName : '',
-		'date' => !empty($row['end_time']) ? date('Y-m-d h:ia', $row['end_time']) : '',
-		'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
-		'times_quests' => !empty($totalQuests[$row['id_warrior']]) ? $totalQuests[$row['id_warrior']] : '',
-                'campaign_name' => !empty($campaignName) ? $campaignImage . '&nbsp;<span style="vertical-align:middle;">' . $campaignName . '</span>' : '',
-                'mem_score' => !empty($row['score']) ? (int)$row['score'] : 0,
-                );
+			'real_name' => !empty($warriorName) ? $warriorName : '',
+			'date' => !empty($row['end_time']) ? date('Y-m-d h:ia', $row['end_time']) : '',
+			'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
+			'times_quests' => !empty($totalQuests[$row['id_warrior']]) ? $totalQuests[$row['id_warrior']] : '',
+			'campaign_name' => !empty($campaignName) ? $campaignImage . '&nbsp;<span style="vertical-align:middle;">' . $campaignName . '</span>' : '',
+			'mem_score' => !empty($row['score']) ? (int)$row['score'] : 0,
+		);
 	}
 	$smcFunc['db_free_result']($request);
     }
@@ -222,7 +223,7 @@ function battle_campaign_leaders($per_page = 10)
 			ORDER BY c.score DESC, qc.complete DESC
 			LIMIT {int:allowed}",
 			array('allowed' => 1, 'campaign' => $campaign, 'complete' => 0, 'warrior' => 1)
-		    );
+		);
 
 	    while ($row = $smcFunc['db_fetch_assoc']($request))
 	    {
@@ -232,13 +233,13 @@ function battle_campaign_leaders($per_page = 10)
 	        $campaignImage = $row['image'] != 'blank.gif' ? '<img style="width:16px;height:16px;vertical-align:middle;" src="' . $settings['default_theme_url'] . '/images/battle/campaign/' . $row['image'] . '" alt="" title="' . $campaignName . '" />' : false;
 
 	        $context['battle_campaign_champions'][$campaign] = array(
-		    'real_name' => !empty($warriorName) ? $warriorName : '',
-		    'date' => !empty($row['end_time']) ? date('Y-m-d h:ia', $row['end_time']) : '',
-		    'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
-		    'times_quests' => 0,
-		    'campaign_name' => !empty($campaignName) ? $campaignImage . '&nbsp;<span style="vertical-align:middle;">' . $campaignName . '</span>' : '',
-		    'mem_score' => !empty($row['score']) ? (int)$row['score'] : 0,
-		);
+				'real_name' => !empty($warriorName) ? $warriorName : '',
+				'date' => !empty($row['end_time']) ? date('Y-m-d h:ia', $row['end_time']) : '',
+				'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
+				'times_quests' => 0,
+				'campaign_name' => !empty($campaignName) ? $campaignImage . '&nbsp;<span style="vertical-align:middle;">' . $campaignName . '</span>' : '',
+				'mem_score' => !empty($row['score']) ? (int)$row['score'] : 0,
+			);
 	    }
 
 	    $smcFunc['db_free_result']($request);
@@ -276,26 +277,26 @@ function battle_leaderboard($per_page = 10)
     $page = $context['current_page'] * $per_page;
 
     $request = $smcFunc['db_query']('', "
-	SELECT id_warrior, battle_title, score, date, level
-	FROM {db_prefix}battle_scores
-	ORDER BY score DESC
-	LIMIT 100"
+		SELECT id_warrior, battle_title, score, date, level
+		FROM {db_prefix}battle_scores
+		ORDER BY score DESC
+		LIMIT 100"
     );
 
     while ($row = $smcFunc['db_fetch_assoc']($request))
     {
-	loadMemberData(array($row['id_warrior']),false, 'normal');
-	$warriorName = strlen($user_profile[$row['id_warrior']]['real_name']) > 28 ? substr($user_profile[$row['id_warrior']]['real_name'], 0, 25) . '...' : $user_profile[$row['id_warrior']]['real_name'];
-	$battleName = strlen($row['battle_title']) > 28 ? substr($row['battle_title'], 0, 25) . '...' : $row['battle_title'];
+		loadMemberData(array($row['id_warrior']),false, 'normal');
+		$warriorName = strlen($user_profile[$row['id_warrior']]['real_name']) > 28 ? substr($user_profile[$row['id_warrior']]['real_name'], 0, 25) . '...' : $user_profile[$row['id_warrior']]['real_name'];
+		$battleName = strlen($row['battle_title']) > 28 ? substr($row['battle_title'], 0, 25) . '...' : $row['battle_title'];
 
-	$context['battle_leaders']['warrior_' . $row['id_warrior']] = array(
-	    'real_name' => !empty($warriorName) ? $warriorName : '',
-	    'date' => !empty($row['date']) ? date('Y-m-d h:ia', $row['date']) : '',
-	    'level' => !empty($row['level']) ? (int)$row['level'] : 0,
-	    'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
-	    'battle_title' => !empty($battleName) ? '<span style="vertical-align:middle;">' . $battleName . '</span>' : '',
-	    'score' => !empty($row['score']) ? (int)$row['score'] : 0,
-        );
+		$context['battle_leaders']['warrior_' . $row['id_warrior']] = array(
+			'real_name' => !empty($warriorName) ? $warriorName : '',
+			'date' => !empty($row['date']) ? date('Y-m-d h:ia', $row['date']) : '',
+			'level' => !empty($row['level']) ? (int)$row['level'] : 0,
+			'id_member' => !empty($row['id_warrior']) ? (int)$row['id_warrior'] : 0,
+			'battle_title' => !empty($battleName) ? '<span style="vertical-align:middle;">' . $battleName . '</span>' : '',
+			'score' => !empty($row['score']) ? (int)$row['score'] : 0,
+		);
     }
     $smcFunc['db_free_result']($request);
 
@@ -323,7 +324,7 @@ function battle_memset()
         $battle_pm = isset($_REQUEST['battle_pm'])? 1 : 0;
         $battle_only_buddies_shout = isset($_REQUEST['battle_only_buddies_shout'])? 1 : 0;
         updateMemberData($user_info['id'], array('bpm' => $battle_pm, 'battle_only_buddies_shout' => $battle_only_buddies_shout));
-	redirectexit('action=battle;sa=settings;#battle_main');
+		redirectexit('action=battle;sa=settings;#battle_main');
     }
 }
 
@@ -395,7 +396,7 @@ function battle_Insert_dead($id_member,$id_target,$name,$time)
 		array('id_mem' => 'string', 'id_memdef' => 'string', 'name' => 'string', 'date' => 'string'),
 		array($id_member, $id_target, $name, $time),
 		array()
-            );
+	);
 }
 
 function battle_insert_champ($id_champ, $slain, $count = 0)
@@ -406,12 +407,11 @@ function battle_insert_champ($id_champ, $slain, $count = 0)
         return false;
 
     $request = $smcFunc['db_query']('', "
-			SELECT times_champ
-			FROM {db_prefix}battle_champs
-			WHERE id_champ = {int:champ} AND id_slain = {int:slain}
-                        LIMIT 1",
-                        array('champ' => $id_champ, 'slain' => $slain)
-                    );
+		SELECT times_champ FROM {db_prefix}battle_champs
+		WHERE id_champ = {int:champ} AND id_slain = {int:slain}
+		LIMIT 1",
+		array('champ' => $id_champ, 'slain' => $slain)
+	);
 
     while ($row = $smcFunc['db_fetch_assoc']($request))
         $count = !empty($row['times_champ']) ? $row['times_champ'] : 0;
@@ -419,12 +419,12 @@ function battle_insert_champ($id_champ, $slain, $count = 0)
     $smcFunc['db_free_result']($request);
 
     $smcFunc['db_insert'](
-                'replace',
+		'replace',
 		'{db_prefix}battle_champs',
 		array('id_champ' => 'int', 'id_slain' => 'int', 'times_champ' => 'int', 'date' => 'int'),
 		array($id_champ, $slain, $count+1, time()),
 		array('id_champ')
-            );
+	);
 }
 
 function battle_game_over()
@@ -444,22 +444,20 @@ function battle_game_over()
 		if (!empty($modSettings['battle_players_lvl']))
 		{
 		    $request = $smcFunc['db_query']('','
-		    	SELECT level
-			FROM {db_prefix}members
-			WHERE level >= {int:end_level}
-			LIMIT 1',
-			array('end_level' => $modSettings['battle_points'])
-		    );
+		    	SELECT level FROM {db_prefix}members
+				WHERE level >= {int:end_level}
+				LIMIT 1',
+				array('end_level' => $modSettings['battle_points'])
+			);
 		    $checkEndLvl = $smcFunc['db_fetch_assoc']($request);
 		    $smcFunc['db_free_result']($request);
 		}
 		elseif (!empty($reset_time))
 		{
 		    $request = $smcFunc['db_query']('','
-		    	SELECT level
-			FROM {db_prefix}members
-			WHERE level >= {int:end_level}',
-			array('end_level' => $modSettings['battle_points'])
+		    	SELECT level FROM {db_prefix}members
+				WHERE level >= {int:end_level}',
+				array('end_level' => $modSettings['battle_points'])
 		    );
 		    while ($row = $smcFunc['db_fetch_assoc']($request))
 			$checkComplete[] = $row['level'];
@@ -476,23 +474,22 @@ function battle_game_over()
 		if ($checkEndLvl && !empty($reset_time))
 		{
 		    $request = $smcFunc['db_query']('','
-		    	SELECT battle_last
-			FROM {db_prefix}members
-			ORDER BY battle_last DESC
-			LIMIT 1'
-		    );
+		    	SELECT battle_last FROM {db_prefix}members
+				ORDER BY battle_last DESC
+				LIMIT 1'
+			);
 		    $check = $smcFunc['db_fetch_assoc']($request);
 		    $smcFunc['db_free_result']($request);
 			$value = date('Y-m-d h:ia', ($check['battle_last'] + round(abs($reset_time * 3600))));
 		    setcookie("battle_start_time", $value, 0, '/');
 		    if ($check['battle_last'] > 0 && (time() - $check['battle_last']) / 3600 >= round(abs($reset_time)))
 		    {
-			$context['battle_reset_points'] = true;
-			require_once($sourcedir . '/Subs-BattleAdmin.php');
-			battle_reset_points(true);
-			battle_reset(true);
+				$context['battle_reset_points'] = true;
+				require_once($sourcedir . '/Subs-BattleAdmin.php');
+				battle_reset_points(true);
+				battle_reset(true);
 
-			redirectexit($scripturl . '?action=battle;sa=main;home;#battle_main');
+				redirectexit($scripturl . '?action=battle;sa=main;home;#battle_main');
 		    }
 		}
 
@@ -539,39 +536,39 @@ function battle_getQuest($questId, $questCamp)
 	        $currentLvl = (!empty($row['campaign_id']) && empty($currentLvlY) ? $currentLvlZ['level_completion'] : $currentLvlY);
 
 	        $questData = array(
-			'id_quest' => $row['id_quest'],
-			'fail' => !empty($row['fail']) ? (int)$row['fail'] : 0,
-			'complete' => !empty($row['complete']) ? (int)$row['complete'] : 0,
-			'quest_id' => $row['id_quest'],
-			'id_member' => $row['id_warrior'],
-			'name' => $row['name'],
-			'itext' => html_entity_decode($row['itext']),
-			'ftext' => html_entity_decode($row['ftext']),
-			'stext' => html_entity_decode($row['stext']),
-			'exp' => $row['exp'],
-			'level' => $row['level'],
-			'success' => $row['success'],
-			'gold' => $row['gold'],
-			'plays' => $row['plays'],
-			'energy' => $row['energy'],
-			'is_final' => $row['is_final'],
-			'min_gold' => $row['min_gold'],
-			'min_exp' => $row['min_exp'],
-			'hp' => $row['hp'],
-			'max_penalty' => $row['max_penalty'],
-			'max_gain' => $row['max_gain'],
-			'limit' => !empty($row['limit']) ? (int)$row['limit'] : 1,
-			'campaign_id' => !empty($row['campaign_id']) ? (int)$row['campaign_id'] : 0,
-			'campaign_name' => !empty($row['campaign_id']) ? $campaign['campaign_name'] : false,
-			'campaign_img' => !empty($row['campaign_id']) ? $settings['default_images_url'] . '/battle/campaign/' . $campaign['img'] : false,
-			'level_completion' => (!empty($currentLvl) ? (int)$currentLvl : 0),
-			'status' => (!empty($row['campaign_id']) && allowedTo('battle_campaign_' . $row['campaign_id']) && $user_info['level'] >= $row['level']) ? $txt['battle_quest_granted'] : $txt['battle_quest_denial'],
-			'start_time' => $campaign['start_time'],
-			'end_time' => $campaign['end_time'],
-			'exp_points' => !empty($row['exp_points']) ? (int)$row['exp_points'] : 0,
-			'warrior_gold' => !empty($row['gold']) ? (int)$row['gold'] : 0,
-			'thisLevel' => !empty($row['level']) ? (int)$row['level'] : 0
-		);
+				'id_quest' => $row['id_quest'],
+				'fail' => !empty($row['fail']) ? (int)$row['fail'] : 0,
+				'complete' => !empty($row['complete']) ? (int)$row['complete'] : 0,
+				'quest_id' => $row['id_quest'],
+				'id_member' => $row['id_warrior'],
+				'name' => $row['name'],
+				'itext' => html_entity_decode($row['itext']),
+				'ftext' => html_entity_decode($row['ftext']),
+				'stext' => html_entity_decode($row['stext']),
+				'exp' => $row['exp'],
+				'level' => $row['level'],
+				'success' => $row['success'],
+				'gold' => $row['gold'],
+				'plays' => $row['plays'],
+				'energy' => $row['energy'],
+				'is_final' => $row['is_final'],
+				'min_gold' => $row['min_gold'],
+				'min_exp' => $row['min_exp'],
+				'hp' => $row['hp'],
+				'max_penalty' => $row['max_penalty'],
+				'max_gain' => $row['max_gain'],
+				'limit' => !empty($row['limit']) ? (int)$row['limit'] : 1,
+				'campaign_id' => !empty($row['campaign_id']) ? (int)$row['campaign_id'] : 0,
+				'campaign_name' => !empty($row['campaign_id']) ? $campaign['campaign_name'] : false,
+				'campaign_img' => !empty($row['campaign_id']) ? $settings['default_images_url'] . '/battle/campaign/' . $campaign['img'] : false,
+				'level_completion' => (!empty($currentLvl) ? (int)$currentLvl : 0),
+				'status' => (!empty($row['campaign_id']) && allowedTo('battle_campaign_' . $row['campaign_id']) && $user_info['level'] >= $row['level']) ? $txt['battle_quest_granted'] : $txt['battle_quest_denial'],
+				'start_time' => $campaign['start_time'],
+				'end_time' => $campaign['end_time'],
+				'exp_points' => !empty($row['exp_points']) ? (int)$row['exp_points'] : 0,
+				'warrior_gold' => !empty($row['gold']) ? (int)$row['gold'] : 0,
+				'thisLevel' => !empty($row['level']) ? (int)$row['level'] : 0
+			);
 	    }
 	    else
 	        $questData['nextLevel'] = !empty($row['level']) ? (int)$row['level'] : 0;

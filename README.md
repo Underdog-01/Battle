@@ -2,7 +2,7 @@ Battle
 ======
 Developed for SMF 2.0.X forums.
 Battle is a RPG gaming modification that allows you to battle members and monsters.
-Its gameplay has options to quest and explore maps where one can find items to assist players with their journey whilst battling monsters.
+Its game play has options to quest and explore maps where one can find items to assist players with their journey whilst battling monsters.
 Support topic at web-develop.ca: https://web-develop.ca/index.php?board=15.0
 
 Attention!
@@ -22,15 +22,13 @@ please do so using the Battle Plugins & Hacks thread located here: https://web-d
 
 Enjoy your battles!
 
-Developed by SA | nend | Underdog
-Copyright 2009, 2010, 2011, 2012, 2013, 2014 SA | nend | Underdog
+Developed by SA | nend | Chen Zhen
+Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018 SA | nend | Chen Zhen
 
 Battle falls under the Creative Commons - Attribution No Derivatives License (by-nd) 3.0
-
-https://creativecommons.org/licenses/by-nd/3.0/
+License: https://creativecommons.org/licenses/by-nd/3.0/
 
 Disclaimer:
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

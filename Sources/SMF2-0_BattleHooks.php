@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0 
  */
 
 if (!defined('SMF'))

@@ -30,13 +30,12 @@ Enjoy your battles!
 [hr]
 
 Developed by [url=https://github.com/SAMods]SA[/url] | [url=http://www.simplemachines.org/community/index.php?action=profile;u=49996]nend[/url] | [url=https://github.com/Underdog-01]Chen Zhen[/url]
-Copyright 2009, 2010, 2011, 2012, 2013, 2014 SA | nend | Chen Zhen
+Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018 SA | nend | Chen Zhen
 
 Revamped and currently supported by [url=http://web-develop.ca]Chen Zhen[/url]
 [b]Battle[/b] falls under the [url=http://creativecommons.org/licenses/by-nd/3.0/]Creative Commons - Attribution No Derivatives License (by-nd) 3.0[/url]
 
 Disclaimer:
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

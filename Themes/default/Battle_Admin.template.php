@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0
  */
 function template_main()
 {
@@ -50,11 +51,11 @@ function template_main()
                             <span id="saCurrentVersion" style="white-space: nowrap;font-style:italic;">
                                 ', $context['battle_version_connect'], '
                             </span>
-                            <br />
-                            ', $txt['smf_version'], ':&nbsp;' . $modSettings["smfVersion"], '
-                            <br />
-                            <a href="http://custom.simplemachines.org/mods/index.php?mod=1944">
-                                ', $txt['battle_mod_dl'], '
+							<br />', (!empty($txt['battle_revision']) && $txt['battle_revision'] !== '&nbsp;' ? $txt['battle_build_info'] . '<br />' : '') . '
+                            ', ($txt['battle_version'] !== $context['battle_version_connect'] ? '
+							<br />' . $txt['battle_advised'] . '<br />
+                            <a href="https://web-develop.ca/index.php?action=downloads;area=stable_smf_battle">
+                                ' . $txt['battle_mod_dl'] : '<br />' . $txt['battle_advised_not']) . '
                             </a>
 			</td>
                     </tr>
@@ -75,7 +76,7 @@ function template_main()
                     <hr />
                     <div style="margin: 0; padding: 1ex 0 1ex 0;border:0px">
                         ', $txt['battle_donate'], '<br />
-                        <form id="ud_xclick" name="sa_xclick" action="http://webdevelop.comli.com/index.php?page=underdog_donation" method="post">
+                        <form id="ud_xclick" name="sa_xclick" action="http://web-develop.ca/index.php?page=underdog_donation" method="post">
                             <input type="hidden" name="cmd" value="_xclick" />
                             <input type="hidden" name="business" value="underdog.admin@gmail.com" />
                             <input type="hidden" name="item_name" value="', $txt['battle_donate'], '" />

@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0
  */
 
  // Admin language
@@ -92,7 +93,9 @@ $txt['battle_warrior_reset_all'] = 'Set ALL members to these stats';
 $txt['battle_warrior_reset_all_new'] = 'Set ALL NEW members to these stats';
 
 // Version, news and credits
-$txt['battle_mod_dl'] = 'Download Battle!';
+$txt['battle_advised'] = 'Your current version is out of date.';
+$txt['battle_advised_not'] = 'You are using the current version of Battle.';
+$txt['battle_mod_dl'] = '[Download]';
 $txt['battle_donate'] = 'If you like Battle, please donate to the developer!';
 $txt['battle_mod_version'] = 'Version/Credits';
 $txt['battle_mod_cur'] = '<b>Your Battle version</b> ';
@@ -105,32 +108,31 @@ $txt['battle_build_info'] = 'This is a development version of SA Battle!';
 $txt['battle_version'] = !empty($modSettings['battle_version']) ? $modSettings['battle_version'] : '??';
 $txt['battle_revision'] = !empty($modSettings['battle_revision']) ? $modSettings['battle_revision'] : '&nbsp;';
 $txt['battle_special_thanks'] = 'Special thanks to';
-$txt['battle_mod_credits'] = '<span><b>Developers:</b> <a href="https://github.com/SAMods">SA </a>| <a href="http://dev.siserver.us/">nend</a> | <a href="https://github.com/Underdog-01">Underdog</a></span>
+$txt['battle_mod_credits'] = '<span><b>Developers:</b> <a href="https://github.com/SAMods">SA </a>| <a href="https://dev.siserver.us/">nend</a> | <a href="https://github.com/Underdog-01">Chen Zhen</a></span>
             <p>
                 <b>Special thanks to:</b><br />
-		<a href="http://www.forcefighters.com/public/forum/index.php" target="_blank">Force Fighters</a> for code contributing/images<br />
-		<a href="http://smf.houseofsmoky.com/index.php?action=profile;u=9" target="_blank">ast3r1x</a> for images<br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=110614" target="_blank">dada83</a> for images<br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=18506" target="_blank">Skhilled</a> for beta testing<br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=360530" target="_blank">Burt</a> for beta testing<br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=322341" target="_blank">NekoJonez</a> for beta testing <br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=157140" target="_blank">Fog</a> for beta testing <br />
-		<a href="http://www.simplemachines.org/community/index.php?action=profile;u=49996" target="_blank"> nend</a> for code contributing<br />
-                <a href="http://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SA&trade;</a> for original development
+		<a href="https://www.forcefighters.com/public/forum/index.php" target="_blank">Force Fighters</a> for code contributing/images<br />
+		<a href="https://smf.houseofsmoky.com/index.php?action=profile;u=9" target="_blank">ast3r1x</a> for images<br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=110614" target="_blank">dada83</a> for images<br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=18506" target="_blank">Skhilled</a> for beta testing<br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=360530" target="_blank">Burt</a> for beta testing<br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=322341" target="_blank">NekoJonez</a> for beta testing <br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=157140" target="_blank">Fog</a> for beta testing <br />
+		<a href="https://www.simplemachines.org/community/index.php?action=profile;u=49996" target="_blank"> nend</a> for code contributing<br />
+                <a href="https://www.simplemachines.org/community/index.php?action=profile;u=84438" target="_blank">SA&trade;</a> for original development
             </p>
             <p>
                 <b>Related Links:</b><br />
-                <a href="http://www.simplemachines.org/community/index.php?topic=323835.0" target="_blank">Battle Support</a><br />
                 <a href="https://github.com/Underdog-01?tab=repositories" target="_blank">Underdog-01 GitHub Repo</a><br />
-                <a href="http://webdevelop.comli.com/index.php?topic=43.0" target="_blank">Battle Mods & Hacks</a><br /><br />
+                <a href="https://web-develop.ca/index.php;#category_4_boards" target="_blank">Battle Mods & Support</a><br /><br />
 		<span>
                     <b>Notes:</b><br />
-                    This software uses <a href="http://www.famfamfam.com/lab/icons/silk/" target="_blank">FamFamFam Silk </a>
+                    This software uses <a href="https://www.famfamfam.com/lab/icons/silk/" target="_blank">FamFamFam Silk </a>
                     icons Free To Use.<br /> This software uses
-                    <a href="http://images.google.com/imgres?imgurl=http://th02.deviantart.net/fs47/300W/f/2009/198/c/a/420__Pixel_Art__Icons_for_RPG_by_Ails.png&imgrefurl=http://ails.deviantart.com/art/420-Pixel-Art-Icons-for-RPG-129892453&usg=__MDfWFpL0DPvYVHkt_0IMnYaQJDE=&h=643&w=300&sz=102&hl=en&start=7&sig2=d47xO6NqPkuEoYeF-pyCYg&um=1&tbnid=YQhVTOqliG9XjM:&tbnh=137&tbnw=64&prev=/images%3Fq%3Drpg%2Bshop%2Bitem%2Bimages%26hl%3Den%26rls%3Dcom.microsoft:*:IE-SearchBox%26rlz%3D1I7DKUK_en%26um%3D1&ei=oc7oSsvIIJO6jAer_vWjDA" target="_blank">420 -Pixel Art- icons for RPG.</a>
+                    <a href="https://images.google.com/imgres?imgurl=https://th02.deviantart.net/fs47/300W/f/2009/198/c/a/420__Pixel_Art__Icons_for_RPG_by_Ails.png&imgrefurl=https://ails.deviantart.com/art/420-Pixel-Art-Icons-for-RPG-129892453&usg=__MDfWFpL0DPvYVHkt_0IMnYaQJDE=&h=643&w=300&sz=102&hl=en&start=7&sig2=d47xO6NqPkuEoYeF-pyCYg&um=1&tbnid=YQhVTOqliG9XjM:&tbnh=137&tbnw=64&prev=/images%3Fq%3Drpg%2Bshop%2Bitem%2Bimages%26hl%3Den%26rls%3Dcom.microsoft:*:IE-SearchBox%26rlz%3D1I7DKUK_en%26um%3D1&ei=oc7oSsvIIJO6jAer_vWjDA" target="_blank">420 -Pixel Art- icons for RPG.</a>
                     icons. Free to use.<br />
                     This software uses
-                    <a href="http://images.google.com/imgres?imgurl=http://nicubunu.ro/pictures/rpg/buildings1.jpg&imgrefurl=http://nicubunu.blogspot.com/2008_01_01_archive.html&usg=__e8XhTw3SlXi-aKgycCPjVis8rbU=&h=480&w=640&sz=93&hl=en&start=2&sig2=TJE6ZKdHoftnO731kWZlBg&um=1&tbnid=8i-N2oBSi9l1fM:&tbnh=103&tbnw=137&prev=/images%3Fq%3Drpg%2Bmaps%26hl%3Den%26rls%3Dcom.microsoft:*:IE-SearchBox%26rlz%3D1I7DKUK_en%26um%3D1&ei=RCTmSrXwMuXMjAen_MyhBA" target="_blank">Gallery rpg_map  </a>
+                    <a href="https://images.google.com/imgres?imgurl=https://nicubunu.ro/pictures/rpg/buildings1.jpg&imgrefurl=https://nicubunu.blogspot.com/2008_01_01_archive.html&usg=__e8XhTw3SlXi-aKgycCPjVis8rbU=&h=480&w=640&sz=93&hl=en&start=2&sig2=TJE6ZKdHoftnO731kWZlBg&um=1&tbnid=8i-N2oBSi9l1fM:&tbnh=103&tbnw=137&prev=/images%3Fq%3Drpg%2Bmaps%26hl%3Den%26rls%3Dcom.microsoft:*:IE-SearchBox%26rlz%3D1I7DKUK_en%26um%3D1&ei=RCTmSrXwMuXMjAen_MyhBA" target="_blank">Gallery rpg_map  </a>
                     icons. Free to use.
                 </span>
             </p>';

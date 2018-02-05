@@ -1,10 +1,11 @@
 <?php
 /*
- * Battle was developed for SMF forums c/o SA, nend & Underdog
- * Copyright 2009, 2010, 2011, 2012, 2013, 2014  SA | nend | Underdog
- * Revamped and supported by -Underdog-
+ * Battle was developed for SMF forums c/o SA, nend & Chen Zhen
+ * Copyright 2009, 2010, 2011, 2012, 2013, 2014, 2018  SA | nend | Chen Zhen
+ * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * License: https://creativecommons.org/licenses/by-nd/3.0/
+ * Support thread: https://web-develop.ca/index.php?board=15.0
  */
 function template_battlemain_above()
 {
@@ -2334,62 +2335,64 @@ function template_battle_monsters()
 			</td>
 		</tr>
 	</table>
-	<table width="98%" border="0" cellspacing="0" cellpadding="4" class="bordercolor centertext">';
+	<div style="font-size: 10px;">
+		<table style="width: 98%;border: 0px;border-collapse: collapse; border-spacing: 0;" class="bordercolor centertext">';
 
 	foreach ($context['get_monsters'] as $key => $row)
 	{
 		$class = $key % 2 == 0 ? 'windowbg' : 'windowbg2';
 
 		echo '
-		<tr>
-			<td align="left" class="', $class, '" style="padding-left:2%;line-height:25px;width:30%;display:inline-block;">
-				<img src="', $settings['images_url'], '/battle/monsters/', $row['img'], '" width="35" height="35" alt="" title="', $row['name'], '" />
-				<span style="position:relative;bottom:12px;">
-					', strlen($row['name']) > 25 ? substr($row['name'], 0, 22) . '...' : $row['name'], '
-				</span>
-			</td>
-			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%;display:inline-block;">
-				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="display:block;vertical-align:middle;" />
-			</td>
-			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;display:inline-block;">
-				<span style="position:relative;display:table-cell;height:25px">
-					', $txt['battle_monStatsA'], ':&nbsp;&nbsp;
-				</span>
-				<span style="position:relative;display:table-cell;">
-					', $row['atk'], '
-				</span>
-			</td>
-			<td align="left" class="', $class, ' centertext" style="padding-left:2%;line-height:25px;width:5%;display:inline-block;">
-				<img border="0" src="', $settings['images_url'], '/battle/bomb.png" alt="" style="display:block;vertical-align:middle;" />
-			</td>
-			<td align="left" class="', $class, ' centertext" style="line-height:25px;width:20%;vertical-align:middle;display:inline-block;">
-				<span style="position:relative;width:80%;display:table-cell;">
-					', $txt['battle_range'], ':&nbsp;&nbsp;
-				</span>
-				<span style="position:relative;width:20%;display:table-cell;">
-					', $row['mon_range'], '
-				</span>
-			</td>
-			<td class="', $class, ' centertext" style="padding-right:2%;line-height:25px;width:5%">
-				<img border="0" src="', $settings['images_url'], '/battle/shield.png" alt="" style="display:block;vertical-align:middle;" />
-			</td>
-			<td class="', $class, ' centertext" style="line-height:25px;width:15%;padding-right:95%;vertical-align:middle;display:inline-block;">
-				<span style="position:relative;display:table-cell;width:80%;">
-					', $txt['battle_monStatsD'], ':&nbsp;&nbsp;
-				</span>
-				<span style="position:relative;display:table-cell;width:20%;">
-					', $row['def'], '
-				</span>
-			</td>
-		</tr>';
+			<tr>
+				<td class="', $class, '" style="padding-left:2%;line-height:25px;width:30%;text-align: left;">
+					<img src="', $settings['images_url'], '/battle/monsters/', $row['img'], '" style="border: 0px;width: 25px;height: 25px;" alt="" title="', $row['name'], '" />
+					<span style="position: relative;bottom: 12px;">
+						', strlen($row['name']) > 25 ? substr($row['name'], 0, 22) . '...' : $row['name'], '
+					</span>
+				</td>
+				<td class="', $class, '" style="padding-left: 2%;line-height: 25px;width: 5%;text-align: left;">
+					<img src="', $settings['images_url'], '/battle/bomb.png" alt="" style="border: 0px;display:block;vertical-align:middle;" />
+				</td>
+				<td class="', $class, '" style="padding-left: 2px;line-height:25px;width:20%;vertical-align:middle;text-align: left;">
+					<span style="position: relative;display: table-cell;height: 25px">
+						', $txt['battle_monStatsA'], ':&nbsp;&nbsp;
+					</span>
+					<span style="position:relative;display:table-cell;text-align: left;font-size: 8px;">
+						', $row['atk'], '
+					</span>
+				</td>
+				<td class="', $class, '" style="padding-left:2%;line-height:25px;width:5%;text-align: left;">
+					<img src="', $settings['images_url'], '/battle/bomb.png" alt="" style="border: 0px;display:block;vertical-align:middle;" />
+				</td>
+				<td class="', $class, '" style="padding-left: 2px;line-height:25px;width:20%;vertical-align:middle;text-align: left;">
+					<span style="position: relative;display: table-cell;height: 25px;">
+						', $txt['battle_range'], ':&nbsp;&nbsp;
+					</span>
+					<span style="position: relative;display: table-cell;text-align: left;font-size: 8px;">
+						', $row['mon_range'], ' - ', $row['mon_max_range'], '
+					</span>
+				</td>
+				<td class="', $class, '" style="padding-left: 2%;line-height: 25px;width: 5%;text-align: left;">
+					<img src="', $settings['images_url'], '/battle/shield.png" alt="" style="border: 0px;display:block;vertical-align:middle;" />
+				</td>
+				<td class="', $class, '" style="padding-left: 2px;line-height:25px;vertical-align:middle;text-align: left;">
+					<span style="position: relative;display: table-cell;height: 25px;">
+						', $txt['battle_monStatsD'], ':&nbsp;&nbsp;
+					</span>
+					<span style="position: relative;display: table-cell;text-align: left;font-size: 8px;">
+						', $row['def'], '
+					</span>
+				</td>
+			</tr>';
 	}
 
 	echo '
-		<tr class="catbg">
-			<td style="font-weight:bold;line-height:3px;position:relative;" colspan="7">
-				&nbsp;
-			</td>
-		</tr>
-	</table>', $context['battle_display']['page'];
+			<tr class="catbg">
+				<td style="font-weight:bold;line-height:3px;position:relative;" colspan="7">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>', $context['battle_display']['page'];
 }
 ?>

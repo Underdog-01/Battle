@@ -1,5 +1,15 @@
 -- Changelog for Battle --
 
+-- V 1.16 --
+
+! fixed improper file require call
+! fixed cookie parameters for reset game
+! fixed monster list display for main battle template
+! updated version, copyright and site links
++ added reset entire game option in Battle Maintenenace
++ new language string added
++ updates to code for PHP 7 compat
+
 -- V 1.15 --
 
 + added user settings custom hook for Battle (SMF 2.0.X branch)
