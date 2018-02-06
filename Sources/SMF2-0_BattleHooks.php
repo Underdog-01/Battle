@@ -5,7 +5,7 @@
  * Revamped and supported by Chen Zhen
  * This software package is distributed under the terms of its Creative Commons - Attribution No Derivatives License (by-nd) 3.0
  * License: https://creativecommons.org/licenses/by-nd/3.0/
- * Support thread: https://web-develop.ca/index.php?board=15.0 
+ * Support thread: https://web-develop.ca/index.php?board=15.0
  */
 
 if (!defined('SMF'))
@@ -380,6 +380,8 @@ function battle_user_settings(&$user_info, &$user_settings)
 
 function battle_language()
 {
+	global $txt;
+
 	loadLanguage('BattleAdmin');
 	loadLanguage('Battle');
 	loadLanguage('BattleHelp');
